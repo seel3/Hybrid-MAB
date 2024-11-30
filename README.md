@@ -34,7 +34,7 @@ Erklärung für alle Fachbegriffe
 
 
 Operation raussuchen und die ersetzten mit Neuronalem netzwerk.
-    Thompson sampling z.B. könnt erbessert werden.
+    Thompson sampling z.B. könnte erbessert werden.
     Approximate steps through Neural network
 
     Nicht neu implemetieren in keras sondern am code arbeiten.
