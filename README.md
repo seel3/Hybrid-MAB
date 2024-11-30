@@ -29,6 +29,10 @@ Fokus auf Prototyp und Entscheidung die in dem meeting getroffen wurden.
 
 Erklärung für alle Fachbegriffe
 
+
+
+
+
 Operation raussuchen und die ersetzten mit Neuronalem netzwerk.
     Thompson sampling z.B. könnt erbessert werden.
     Approximate steps through Neural network
@@ -36,7 +40,7 @@ Operation raussuchen und die ersetzten mit Neuronalem netzwerk.
     Nicht neu implemetieren in keras sondern am code arbeiten.
 
 
-    hyperunsensibles modell das defender ersetzt teils. Modell finetunen oder existierendes nutzen.
+    hypersensibles modell das defender ersetzt teils. Modell finetunen oder existierendes nutzen.
 
-    nutzen von confidence level von e.g. malcon um defender aufruf zu ersetzten. z.b. erst ab 50% confidence von malconv den windows defender befragen zu malware sample.
+    nutzen von confidence level von e.g. malconv um defender aufruf zu ersetzten. z.b. erst ab 50% confidence von malconv den windows defender befragen zu malware sample.
 
