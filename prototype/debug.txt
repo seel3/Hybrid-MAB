@@ -1,0 +1,38 @@
+### [3171/44580 (7.11%)] skip: 257 evasive: 67/743 (9.02%) minimal: 57
+-----------------------------------------------
+select pending sample: 585bfc41 (pull_count:5)
+count_working: 78
+update_reward_with_alpha_beta: update 1 with alpha: 1 beta: 0
+delete generated tmp files in output/minimizer_output/
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/root/MAB-malware/rewriter_MAB.py", line 61, in run
+    arm = self.bandit.get_next_arm(sample, sample.get_applied_actions(), rand=self.rand)
+  File "/root/MAB-malware/bandit.py", line 98, in get_next_arm
+    idx = max(range(len(self.list_arm)), key=lambda x: samples[x])
+  File "/root/MAB-malware/bandit.py", line 98, in <lambda>
+    idx = max(range(len(self.list_arm)), key=lambda x: samples[x])
+IndexError: list index out of range
+
+update_reward_with_alpha_beta: update 7 with alpha: 1 beta: 0
+delete generated tmp files in output/minimizer_output/
+update_reward_with_alpha_beta: update 7 with alpha: 1 beta: 0
+delete generated tmp files in output/minimizer_output/
+update_reward_with_alpha_beta: update 4 with alpha: 1 beta: 0
+delete generated tmp files in output/minimizer_output/
+update_reward_with_alpha_beta: update 7 with alpha: 1 beta: 0
+delete generated tmp files in output/minimizer_output/
+update_reward_with_alpha_beta: update 7 with alpha: 1 beta: 0
+delete generated tmp files in output/minimizer_output/
+update_reward_with_alpha_beta: update 4 with alpha: 1 beta: 0
+delete generated tmp files in output/minimizer_output/
+update_reward_with_alpha_beta: update 4 with alpha: 1 beta: 0
+delete generated tmp files in output/minimizer_output/
+update_reward_with_alpha_beta: update 3 with alpha: 1 beta: 0
+no need to add a new arm, update existing arm
+delete generated tmp files in output/minimizer_output/
+mv: cannot move 'data/share/tmp/74e6f21acd39613028172bc762b256b173d33d1702fa111981ad3ab1282b0573.SP1.OA.OA' to 'data/share/minimizer/74e6f21acd39613028172bc762b256b173d33d1702fa111981ad3ab1282b0573.SP1.OA.OA': Input/output error
