@@ -1,22 +1,35 @@
 import os, time;
 
 runs = 10
-file = "test.py"
+file = "run_attack.py"
 total = []
 
 for i in range(runs):
 
+    # TODO: start vm
+    
+    # TODO: mount share
+
+
     # get start time
     start = time.time()
 
-    os.system(f"python {file}")
+    #os.system("docker run -ti wsong008/mab-malware bash")
 
+    #os.system(f"python {file}")
 
     # get stop time
     stop = time.time()
+    
+    # TODO: unmount share
+    # TODO: reset vm with qemu agent
+    
 
     print(i)
     total.append(stop-start)
+    
+    
+    
 print("\n")
 print("\n")
 print("\n")
