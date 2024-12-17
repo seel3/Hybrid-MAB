@@ -1,0 +1,818 @@
+clear
+sudo apt update
+apt update
+su -
+su -
+nvidia-smi
+clear
+echo "export TERM=xterm-256color" >> ~/.bashrc
+source ~/.bashrc
+clear
+su -
+shutdown 0
+su -
+clear
+ls
+clear
+ls
+clear
+git
+clear
+ls
+git clone https://github.com/bitsecurerlab/MAB-malware.git
+ls
+cd MAB-malware/
+ls
+clear
+l
+clear
+ls -la
+python run_attack.py 
+apt install python
+su -
+sudo su
+su -
+exit
+clear
+lscpu | grep Virtualization
+zgrep CONFIG_KVM /boot/config-$(uname -r)
+sudo apt install qemu-system-x86 libvirt-daemon-system virtinst     virt-manager virt-viewer ovmf swtpm qemu-utils guestfs-tools     libosinfo-bin tuned
+ls
+wget https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.266-1/virtio-win-0.1.266.iso
+sudo systemctl enable libvirtd.service
+sudo reboot
+apt update
+sudo apt update
+clear
+sudo apt install python
+sudo apt install python3
+python3
+ls
+cd MAB-malware/
+ls
+python3 run_attack.py 
+ls
+clear
+nvidia-smi 
+clear
+sudo docker pull wsong008/mab-malware
+docker run -ti wsong008/mab-malware bash
+sudo docker run -ti wsong008/mab-malware bash
+sudo docker run --rm --runtime=nvidia --gpus all -ti wsong008/mab-malware bash
+ls
+cd MAB-malware/
+vim requirements.txt
+clear
+nvidia-smi 
+nvidia-smi -l
+sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+clear
+ls
+cd ..
+mkdir share
+chmod 777 share/
+sudo apt install virtiofsd
+sudo apt update
+sudo apt update && sudo apt upgrade
+clear
+https://absprog.com/post/qemu-kvm-shared-folder
+sudo apt install virtiofsd 
+sudo apt install curl
+sudo apt install tmux
+sudo apt install sid
+sudo apt install qemu
+sudo apt install qemu-system libvirt-daemon-system
+sudo apt update
+sudo apt update --allow-unauthenticated
+sudo vim /etc/apt/sources.list.d/nvidia-docker.list
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg   && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list |     sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' |     sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+sudo apt-get update
+sudo apt-get install -y nvidia-container-toolkit
+sudo apt-get update && sudo apt-get upgrade
+sudp apt-get install virtiofsd
+sudo apt-get install virtiofsd
+sudo apt install virtiofsd
+sudo apt update
+clear
+virtiofsd
+sudo apt install qemu-system-common
+sudo virtiofsd
+clear
+sudo systemctl enable libvirtd
+sudo systemctl enable libvirtd --now
+sudo systemctl status libvirtd
+sudo apt install dnsmasq
+sudo systemctl status libvirtd
+sudo systemctl restart libvirtd
+sudo systemctl status libvirtd
+clear
+sudo virt-host-validate qemu
+lscpu | grep sev
+virsh uri
+sudo usermod -aG libvirt $USER
+echo "export LIBVIRT_DEFAULT_URI='qemu:///system'" >> ~/.bashrc
+source ~/.bashrc
+virsh uri
+ls /var/lib/libvirt/images/
+sudo setfacl -R -b /var/lib/libvirt/images
+sudo setfacl -R -m u:$USER:rwX /var/lib/libvirt/images
+udo setfacl -m d:u:$USER:rwx /var/lib/libvirt/images
+sudo setfacl -m d:u:$USER:rwx /var/lib/libvirt/images
+getfacl /var/lib/libvirt/images
+clear
+exit
+clear
+virsh uri
+clear
+ip a
+ls
+wget https://software.download.prss.microsoft.com/dbazure/Win11_24H2_EnglishInternational_x64.iso?t=40603fdf-3fa9-406d-ae2b-0584508128b2&P1=1732969603&P2=601&P3=2&P4=v%2bz30V%2bycZXukxpPOy4LThuzT56SNMx1gnCgUUeNbaFe7vRbujx3y9jpVRM28AQvI9Oa%2b0piaP%2fMOnGW3ikY2QX2gZzxM%2fYHkF1idDl5r8NASt1ZipwTxWlDrrALiVBe4JEsGtMnZzs2%2fvWMKUhaxu9aTQDeAu5J3Sp1QOz3jDxHiU6bPcnsqcNH9r908Y9mSV1yq6PSumktFEo31QFCASyKr%2frSDpZCxZMFH90QrXt%2fvDUpr5ybvnhu3giRN1grksJpEAMI5UEzOebatWAaUwrN5%2bnCr1EciMNq5uZXew8juqdVqNvX8b6a%2fD24ZldJHAD9%2feo05Ys4ElVJ5s0d6A%3d%3d
+ls
+rm wget-log 
+wget https://software.download.prss.microsoft.com/dbazure/Win11_24H2_EnglishInternational_x64.iso?t=40603fdf-3fa9-406d-ae2b-0584508128b2&P1=1732969603&P2=601&P3=2&P4=v%2bz30V%2bycZXukxpPOy4LThuzT56SNMx1gnCgUUeNbaFe7vRbujx3y9jpVRM28AQvI9Oa%2b0piaP%2fMOnGW3ikY2QX2gZzxM%2fYHkF1idDl5r8NASt1ZipwTxWlDrrALiVBe4JEsGtMnZzs2%2fvWMKUhaxu9aTQDeAu5J3Sp1QOz3jDxHiU6bPcnsqcNH9r908Y9mSV1yq6PSumktFEo31QFCASyKr%2frSDpZCxZMFH90QrXt%2fvDUpr5ybvnhu3giRN1grksJpEAMI5UEzOebatWAaUwrN5%2bnCr1EciMNq5uZXew8juqdVqNvX8b6a%2fD24ZldJHAD9%2feo05Ys4ElVJ5s0d6A%3d%3d
+ls
+rm wget-log 
+clear
+ls
+mv Win11_24H2_EnglishInternational_x64.iso /var/lib/libvirt/images/Win11.iso
+python
+ls
+mv virtio-win-0.1.266.iso var/lib/libvirt/virtio.iso
+ls
+mv virtio-win-0.1.266.iso /var/lib/libvirt/virtio.iso
+sudo mv virtio-win-0.1.266.iso /var/lib/libvirt/virtio.iso
+l
+ls /var/lib/libvirt/images/
+sudo mv /var/lib/libvirt/virtio.iso /var/lib/libvirt/images/
+journalctl –g tpm
+sudo journalctl –g tpm
+sudo journalctl | grep tpm
+shutdown 0
+sudo shutdown 0
+sudo dmesg | grep -i tpm
+clear
+sudo dmesg | grep -i tpm
+ls /dev/tpm0
+cat /proc/keys
+sudo apt -y install ovmf swtpm swtpm-tools
+ip a
+exit
+ip a
+ping 192.168.100.192
+clear
+ls
+cd MAB-malware/
+ls
+vim conf/configure.ini 
+clear
+ls
+ls ~
+$ sudo docker run -ti -v /home/seel3/share:/root/MAB-malware/data/share wsong008/mab-malware bash
+ls
+cd ..
+ls
+cd share/
+ls
+sudo rm -r *
+ls
+cd ..
+sudo apt-get install cifs-utils
+sudo mount -t cifs -o username=[username of guest OS],domain=MYDOMAIN,uid=1000 //192.168.56.56/share/ /home/[username of host OS]/share/
+sudo mount -t cifs -o username=mlvalidator,domain=MYDOMAIN,uid=1000 //192.168.100.192/share/ /home/seel3/share/
+ls
+cd share/
+ls
+touch test
+ls
+
+ls
+touch test
+$ sudo docker run -ti -v /home/seel3/share:/root/MAB-malware/data/share wsong008/mab-malware bash
+sudo docker run -ti -v /home/seel3/share:/root/MAB-malware/data/share wsong008/mab-malware bash
+sudo shutdown 0
+ls
+cd share/
+ls
+cd ..
+ls
+clear
+reboot
+sudo reboot
+sudo docker run -ti -v /home/seel3/share:/root/MAB-malware/data/share wsong008/mab-malware bash
+sudo mount -t cifs -o username=mlvalidator,domain=MYDOMAIN,uid=1000 //192.168.100.192/share/ /home/seel3/share/
+touch share/test
+ls
+cd share/
+ls
+rm -r *
+ls
+cd share/
+ls -la
+rm -r *
+sudo rm -r *
+ls
+ls -la
+cd ..
+sudo mount -t cifs -o username=mlvalidator,domain=MYDOMAIN,uid=1000 //192.168.100.192/share/ /home/seel3/share/
+clear
+ls -la share
+sudo docker run -ti -v /home/seel3/share:/root/MAB-malware/data/share wsong008/mab-malware bash
+ls
+exit
+ls
+shutdown 0
+sudo shutdown 0
+ls
+sudo shutdown 0
+ls
+cd share/
+ls
+ls -la
+cd ..
+ls
+sudo mount -t cifs -o username=mlvalidator,domain=MYDOMAIN,uid=1000 //192.168.100.192/share/ /home/seel3/share/
+ls -la
+cd share/
+ls -la
+clear
+sudo docker run -ti -v /home/seel3/share:/root/MAB-malware/data/share wsong008/mab-malware bash
+exit
+sudo reboot
+tmux
+screen
+sudo apt install tmux
+clear
+tmux
+tmux a
+exit
+tmux a
+exit
+tmux a
+:q
+exit
+ls
+ls share/
+sudo mount -t cifs -o username=mlvalidator,domain=MYDOMAIN,uid=1000 //192.168.100.192/share/ /home/seel3/share/
+ls share/
+sudo docker run -ti -v /home/seel3/share:/root/MAB-malware/data/share wsong008/mab-malware bash
+clear
+exit
+clear
+docker container list
+sudo docker container ls
+tmux
+tmux a
+clEar
+sudo docker container ls
+clear
+sudo docker run -ti wsong008/mab-malware bash
+ls
+reboot
+sudo reboot 
+ls
+vim evaluate.py
+sudo python evaluate.py 
+apt install python
+sudo apt install python
+sudo apt install python3
+sudo python3 evaluate.py 
+sudo mount -t cifs -o username=mlvalidator,domain=MYDOMAIN,uid=1000 //192.168.100.192/share/ /home/seel3/share/
+sudo docker run -ti -v /home/seel3/share:/root/MAB-malware/data/share wsong008/mab-malware bash
+ls
+ls share/
+cd ..
+ls
+sudo umount share
+sudo umount -t cifs share
+sudo reboot
+top
+clear
+btop
+htop
+clear
+sudo mount -t cifs -o username=mlvalidator,domain=MYDOMAIN,uid=1000 //192.168.100.192/share/ /home/seel3/share/
+sudo docker run -ti -v /home/seel3/share:/root/MAB-malware/data/share wsong008/mab-malware bash
+docker ps
+sudo docker ps
+exit
+sudo docker ps
+exit
+sudo docker ps
+docker attach 4462c1998883
+sudo docker attach 4462c1998883
+sudo docker ps
+clear
+sudo docker attach 4462c1998883
+sudo docker ls
+sudo docker container ls
+sudo docker exec 4462c1998883 bash
+sudo shutdown 0
+curl -fsSL https://tailscale.com/install.sh | sh
+clear
+sudo tailscale
+sudo tailscale up
+yay
+clear
+tmux
+tmux a
+exit
+tmux a
+exit
+tmux a
+exit
+sudo docker run -ti wsong008/mab-malware bash
+ls
+clear
+ip a
+sudo systemctl status libvirtd
+sudo systemctl enable tailscaled
+clear
+sudo tailscale up
+sudo tailscale up -h
+clear
+sudo sytsmctl restart libvirtd
+sudo sytemctl restart libvirtd
+sudo systemctl restart libvirtd
+sudo umount share 
+sudo mount -t cifs -o username=mlvalidator,domain=MYDOMAIN,uid=1000 //192.168.100.192/share/ /home/seel3/share/
+sudo docker run -ti -v /home/seel3/share:/root/MAB-malware/data/share wsong008/mab-malware bash
+tmux a
+ls
+cd MAB-malware/
+ls
+cat conf/configure.ini 
+tmux a
+sudo docker run -ti -v /home/seel3/share:/root/MAB-malware/data/share wsong008/mab-malware bash
+sudo mount -t cifs -o username=mlvalidator,domain=MYDOMAIN,uid=1000 //192.168.100.192/share/ /home/seel3/share/
+sudo docker run -ti -v /home/seel3/share:/root/MAB-malware/data/share wsong008/mab-malware bash
+tmux a
+tmux
+exit
+tmux a
+ls
+cd share/
+ls
+tree
+ls
+cd ..
+ls
+cp -r share/ saved_results_AV
+ls
+rm -r saved_results_AV/
+sudo cp -r share/ saved_results_AV
+cd saved_results_AV/
+ls
+clear
+cd tmp/
+ls
+cd ..
+ls
+cd output/
+ls
+cd ..
+rm -r tmp/
+sudo rm -r tmp/
+ls
+cd ..
+cp -r share/log/ saved_results_AV/
+sudo cp -r share/log/ saved_results_AV/
+ls share/
+ls share/minimizer/
+cd share/
+ls
+ls minimizer/
+ls tmp/
+ls rewriter/
+cd ..
+ls
+clear
+cd saved_results_AV/
+ls
+ls output/
+cd ..
+ls
+cd share
+ls
+rm -r *
+ls
+cd ..
+tmux a
+ls
+tmux a
+exit
+tmux a
+exit
+clear
+ls
+cat evaluate.py 
+nvim evaluate.py 
+exit
+tmux a
+exit
+cat evaluate.py 
+virsh snapshot-revert 
+virsh list --all
+virsh snapshot-info 
+virsh snapshot-info win11
+virsh snapshot-info --current win11
+virsh snapshot-info --current 
+virsh snapshot-info --current win11
+virsh snapshot-info --domain win11
+clear
+tmux a
+exit
+tmux a
+exit
+docker ps
+sudo docker ps
+sudo docker exec d6c2df47734e bash
+sudo docker exec -ti d6c2df47734e bash
+clear
+tmux a
+exit
+tmux a
+ls
+clear
+ls
+clear
+ls -l
+clear
+ls -la
+clear
+ls -l
+clear
+l
+clear
+ls
+cd MAB-malware/
+ls
+cd ..
+ls
+cd share/
+ls
+clear
+tmux a
+exit
+tmux a
+exit
+tmux a
+exit
+tmux a
+exit
+tmux a
+ls
+sudo mount -t cifs -o username=mlvalidator,domain=MYDOMAIN,uid=1000 //192.168.100.192/share/ /home/seel3/share/
+sudo docker run -ti -v /home/seel3/share:/root/MAB-malware/data/share wsong008/mab-malware bash
+sudo umount share 
+sudo mount -t cifs -o username=mlvalidator,domain=MYDOMAIN,uid=1000 //192.168.100.192/share/ /home/seel3/share/
+sudo docker run -ti -v /home/seel3/share:/root/MAB-malware/data/share wsong008/mab-malware bash
+sudo docker run --gpus all -ti -v /home/seel3/share:/root/MAB-malware/data/share wsong008/mab-malware bash
+nvidia-smi 
+sudo apt update
+sudo apt upgrade
+reboot 
+sudo reboot 
+clear
+sudo systemctl status ssh
+sudo systemctl status tailscale
+sudo systemctl status tailscaled
+ping 8.8.8.8
+ping google.com
+sudo vim
+sudo vim /etc/resolv.conf 
+sudo tailscale up
+ping google.com
+ping 100.100.100.100
+ping google.com
+sudo vim /etc/resolv.conf 
+clear
+systemd-resolved
+sudo systemd-resolved
+sudo vim /etc/resolv.conf 
+ping google.com
+sudo apt install systemd-resolved
+ping google.com
+sudo systemctl stop tailscaled
+sudo vim /etc/resolv.conf 
+ping google.com
+sudo apt install systemd-resolved
+reboot
+sudo reboot
+sudo vim /etc/resolv.conf 
+sudo vim /etc/systemd/resolved.conf 
+sudo tailscale up
+ping google.com
+ls
+sudo vim /etc/systemd/resolved.conf 
+ping google.com
+sudo vim /etc/systemd/resolved.conf 
+sudo systemctl enable --now systemd-resolved
+ping google.com
+resolvectl 
+sudo vim /etc/systemd/resolved.conf 
+ping google.com
+reboot
+sudo reboot
+ping 8.8.8.8
+ping google.com
+sudo vim /etc/systemd/resolved.conf 
+sudo vim /etc/resolv.conf 
+resolvct
+sudo resolvectl 
+ping google.com
+sudo tailscale up
+ping google.com
+sudo resolvconf 
+clear
+sudo systemctl status systemd-resolved
+sudo vim /etc/systemd/resolved.conf 
+sudo systemctl restart systemd-resolved
+sudo systemctl status systemd-resolved
+ping google.com
+sudo apt update
+sudo apt upgrade
+nvidia-smi 
+nvidia-detct
+sudo apt install linux-headers-amd64
+sudo apt install nvidia-driver
+sudo apt install firmware-misc-nonfree
+sudo apt install nvidia-kernel-dkms
+clear
+sudo apt install nvidia-cuda-dev nvidia-cuda-toolkit
+sudo reboot
+nvidia-smi 
+ping google.com
+clear
+sudo tailscale up -h
+sudo tailscale up 
+clear
+nvidia-smi 
+clear
+sudo nvidia-detect+
+sudo nvidia-detect
+sudo apt install nvidia-detect
+sudo nvidia-detect
+sudo apt install nvidia-driver nvidia-smi linux-image-amd64 cuda
+sudo apt install nvidia-driver nvidia-smi linux-image-amd64
+lspci | grep -i nvidia
+uname -m && cat /etc/*release
+gcc --version
+sudo add-apt-repository contrib
+sudo vim /etc/apt/sources.list
+sudo apt-get update
+sudo apt-get install cuda-toolkit
+sudo apt install cuda-toolkit
+uname -m && cat /etc/*release
+wget https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo apt update
+sudo apt upgrade
+sudo apt-get install cuda-toolkit
+sudo reboot
+sudo tailscaled up
+sudo tailscale up
+sudo nvidia-smi 
+export PATH=/usr/local/cuda-12.6/bin${PATH:+:${PATH}}
+nvidia-smi 
+sudo apt install nvidia-driverver
+sudo apt install nvidia-driver
+nvidia-smi 
+sudo nvidia-smi
+reboot
+sudo reboot
+sudo nvidia-smi
+sudo apt install nvidia-smi
+sudo apt remove nvidia-drivers
+sudo apt remove nvidia-driver
+sudo apt install nvidia-smi
+docker run --name my_all_gpu_container --gpus all -t nvidia/cuda
+sudo docker run --name my_all_gpu_container --gpus all -t nvidia/cuda
+sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+sudo dockerd 
+clear
+reboot
+sudo reboot
+sudo systemctl status dockerd
+sudo systemctl status docker
+sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+sudo docker run -ti -v /home/seel3/share:/root/MAB-malware/data/share wsong008/mab-malware bash
+clear
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install nvidia-detect
+nvidia-detect 
+sudo nvidia-detect 
+clear
+sudo nvidia-detect 
+wget https://us.download.nvidia.com/XFree86/Linux-x86_64/550.135/NVIDIA-Linux-x86_64-550.135.run
+echo "blacklist nouveau" | sudo tee /etc/modprobe.d/blacklist-nvidia-nouveau.conf
+sudo apt-get install module-assistant
+sudo m-a prepare
+sudo update-initramfs -u
+sudo systemctl set-default multi-user.target
+sudo systemctl reboot
+ls
+sudo su
+clear
+sudo nvidia-smi
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg   && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list |     sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' |     sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+sudo apt-get update
+sudo apt-get install -y nvidia-container-toolkit
+sudo apt-get install nvidia-container-toolkit nvidia-docker2
+sudo systemctl restart docker
+docker run --runtime=nvidia --rm nvidia/cuda:10.1-devel nvidia-smi
+sudo docker run --runtime=nvidia --rm nvidia/cuda:10.1-devel nvidia-smi
+sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+sudo nvidia-docker
+sudo nvidia-container-cli 
+sudo apt install nvidia-docker
+sudo apt install nvidia-docker2
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
+sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+sudo reboot
+sudo nvidia-smi
+sudo apt install nvidia-cuda-toolkit
+clear
+lspci | grep -i nvidia
+uname -m && cat /etc/*release
+sudo add-apt-repository contrib
+sudo apt install add-apt-repository
+sudo apt-get install software-properties-common
+sudo add-apt-repository contrib
+sudo apt-key del 7fa2af80
+wget https://developer.download.nvidia.com/compute/cuda/repos/<distro>/<arch>/cuda-keyring_1.1-1_all.deb
+wget https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo apt-get update
+sudo apt-get install cuda-toolkit
+sudo apt-get -y install cuda-toolkit-12-6
+sudo apt-get install -y nvidia-open
+sudo apt remove nvidia-libopencl1
+sudo apt-get install -y nvidia-open
+sudo apt install nvidia-libopencl1
+sudo apt-get install -y nvidia-open
+nvidia-smi
+sudo reboot
+sudo apt update
+sudo apt upgrade
+sudo sudo nvidia-smi
+cat /sys/module/nvidia_drm/parameters/modeset
+apt install nvidia-smi
+sudo apt install nvidia-smi
+apt install nvidia-smi
+sudo dpkg -l | grep -i nvidia
+sudo apt-get remove --purge '^nvidia-.*'
+sudo reboot
+sudo apt update
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg   && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list |     sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' |     sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+sudo apt-get update
+sudo apt-get install -y nvidia-container-toolkit
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
+sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+sudo docker run --rm --runtime=nvidia --gpus all ubuntu
+sudo docker run --rm --runtime=nvidia ubuntu
+sudo docker run --rm --runtime=nvidia ubuntu sh
+sudo docker run --rm --runtime=nvidia ubuntu bash
+ls
+sudo docker ps
+sudo docker ps --all
+sudo docker purge
+sudo docker image purge
+sudo docker prune
+sudo docker image prune
+sudo docker container prune
+clear
+sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+sudo rpm --erase gpg-pubkey-7fa2af80*
+wget https://developer.download.nvidia.com/compute/cuda/repos/$distro/$arch/cuda-keyring_1.1-1_all.deb
+ls
+rm cuda-keyring_1.1-1_all.deb
+rm NVIDIA-Linux-x86_64-550.135.run 
+clear
+wget https://developer.download.nvidia.com/compute/cuda/repos/$distro/$arch/cuda-keyring_1.1-1_all.deb
+wget https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda_keyring_1.1-1_all.deb
+ls
+sudo dpkg -i cuda-keyring_1.1-1_all.deb 
+sudo apt-get update
+nvidia-driver-assistant 
+sudo apt install nvidia-driver-assistant 
+nvidia-driver-assistant --install
+nvidia-smi
+lspci | grep VGA
+sudo apt-get install cuda-drivers
+sudo reboot
+sudo nvidia-smi
+sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+sudo apt-get install -y nvidia-container-toolkit
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
+sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+sudo docker run --rm --gpus all ubuntu nvidia-smi
+sudo docker run --rm --gpus all ubuntu bash
+clear
+wget https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-keyring_1.1-1_all.deb
+ls
+rm cuda-keyring_1.1-1_all.deb
+rm cuda-keyring_1.1-1_all.deb.*
+wget https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo add-apt-repository contrib
+sudo apt-get update
+sudo apt-get -y install cuda-toolkit-12-6
+sudo apt-get install -y nvidia-open
+sudo reboot
+sudo apt-get update
+sudo apt-get install -y nvidia-container-toolkit
+clear
+sudo apt-get install -y nvidia-container-toolkit
+sudo apt autoremove
+clear
+sudo nvidia-smi
+cat /proc/driver/nvidia/version
+wget https://us.download.nvidia.com/XFree86/Linux-x86_64/550.135/NVIDIA-Linux-x86_64-550.135.run
+ls
+chmod +x NVIDIA-Linux-x86_64-550.135.run 
+./NVIDIA-Linux-x86_64-550.135.run 
+sudo ./NVIDIA-Linux-x86_64-550.135.run 
+sudo apt-get remove --purge '^nvidia-.*'
+sudo reboot
+sudo ./NVIDIA-Linux-x86_64-550.135.run 
+sudo apt-get update
+sudo apt-get install -y nvidia-container-toolkit
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
+sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+sudo apt-get --purge remove "*cuda*" "*cublas*" "*cufft*" "*cufile*" "*curand*"  "*cusolver*" "*cusparse*" "*gds-tools*" "*npp*" "*nvjpeg*" "nsight*" "*nvvm*"
+sudo apt-get remove --purge '^nvidia-.*'
+clear
+sudo reboot
+sudo apt-get autoremove --purge -V
+sudo reboot
+clear
+uname -r
+sudo rpm --erase gpg-pubkey-7fa2af80*
+sudo apt-key del 7fa2af80
+wget https://developer.download.nvidia.com/compute/cuda/repos/$distro/$arch/cuda-keyring_1.1-1_all.deb
+wget https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-keyring_1.1-1_all.deb
+ls
+rm cuda-keyring_1.1-1_all.deb
+rm cuda-keyring_1.1-1_all.deb.1 
+rm NVIDIA-Linux-x86_64-550.135.run 
+wget https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda_keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb 
+sudo apt-get update
+sudo apt install cuda-keyring
+sudo apt-get install linux-headers-$(uname -r)
+sudo add-apt-repository contrib
+sudo apt-get update
+sudo apt-get -V install nvidia-open
+sudo reboot
+clear
+sudo cat /dev/nvidia
+sudo cat /dev/nvidia*
+sudo -i
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg   && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list |     sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' |     sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+sudo apt-get update
+sudo apt-get install -y nvidia-container-toolkit
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
+sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+clear
+exit
+sudo systemctl enable persistenced --now
+sudo apt install persistenced
+sudo su
+sudo apt-get -V install nvidia-open
+ls /usr/bin/
+ls /usr/bin/ | grep per
+sudo systemctl start nvidia-persistenced
+systemctl status nvidia-persistenced.service
+journalctl -xeu nvidia-persistenced.service
+sudo systemctl start nvidia-persistenced
+systemctl status nvidia-persistenced.service
+/usr/bin/nvidia-persistenced --verbose
+less /var/syslog
+sudo less /var/log/syslog
+clear
+/usr/bin/nvidia-persistenced --verbose
+sudo -i
+systemctl start nvidia-persistenced
+sudo systemctl start nvidia-persistenced
+systemctl status nvidia-persistenced.service
+journalctl -xeu nvidia-persistenced.service
+sudo journalctl -xeu nvidia-persistenced.service
+shutdown
+shutdown 0
+sudo shutdown 0
+sudo less /root/.bash_history
+exit
+less .bash_history 
+sudo -
+sudo su
