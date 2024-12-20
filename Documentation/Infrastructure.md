@@ -3,7 +3,24 @@
 ## Proxmox
 
 
+
 ## av-server
+Create normal Windows VM.
+
+Install latest Defender Updates
+
+Disable automated sample submission.
+
+
+Create a shared folder: 
+* Create a folder named "share" on the Desktop folder of the guest machine.
+* Right-click the folder and click "Properties". 
+* Open the "sharing" tab and click "Advanced Sharing".
+* Check the "share this folder" box and click on "Permissions". 
+* Choose "everyone" to give full control. Open the "Security" tab and click Edit. 
+* Select "Everyone" in the "Group or user names" to give full control. 
+* If "Everyone" does not exist, click on "Add" to create one.
+
 
 ## ml-server
 ### VM Setup
@@ -92,3 +109,24 @@ Check if everything worked by running:
 ```bash
 sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
 ```
+
+### share
+Installieren der nötigen tools:
+```bash
+sudo apt-get install cifs-utils
+```
+
+
+Erstellen des share directories:
+```bash
+mkdir /home/user/share
+```
+
+Mount des shares zur Kommunikation mit der av:
+```bash
+sudo mount -t cifs -o username=user,domain=domain,uid=1000 //192.168.1.29/share/ /home/user/share/
+```
+
+
+
+
