@@ -7,8 +7,8 @@ Ember:
 
 
 Malconv:
-1: 1737m 31.217s (CPU)
-2:
+1: 1737m 31.217s (homeserver CPU)
+2: 78m19.748s (gpu-server GPU)
 3:
 4:
 5:
