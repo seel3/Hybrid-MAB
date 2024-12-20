@@ -41,15 +41,6 @@ mv: cannot move 'data/share/tmp/74e6f21acd39613028172bc762b256b173d33d1702fa1119
 
 
 
-
-
-
-
-
-
-
-
-
 ### [3308/44580 (7.42%)] skip: 257 evasive: 67/743 (9.02%) minimal: 55
 -----------------------------------------------
 select pending sample: 68163d2d (pull_count:2)
@@ -234,3 +225,42 @@ update_reward_with_alpha_beta: update 7 with alpha: 1 beta: 0
 delete generated tmp files in output/minimizer_output/
 update_reward_with_alpha_beta: update 7 with alpha: 1 beta: 0
 delete generated tmp files in output/minimizer_output/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/root/MAB-malware/models.py:25: UserWarning: The given NumPy array is not writeable, and PyTorch does not support non-writeable tensors. This means you can write to the underlying (supposedly non-writeable) NumPy array using the tensor. You may want to copy the array to protect its data or make it writeable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at  /pytorch/torch/csrc/utils/tensor_numpy.cpp:143.)
+  _inp = torch.from_numpy( np.frombuffer(bytez,dtype=np.uint8)[np.newaxis,:] )
