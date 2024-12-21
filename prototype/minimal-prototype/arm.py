@@ -392,7 +392,7 @@ class ArmSP(Arm):
         #    os.system('rm %s' %input_path)
         return output_path
 
-class ArmCP1(Arm):     # todo
+class ArmCP1(Arm):  
     def __init__(self, idx):
         super().__init__(idx)
         self.action = 'CP1'     # special case, only CP1 init with section_idx, SP1 only set_content

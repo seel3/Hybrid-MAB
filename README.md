@@ -3,15 +3,10 @@ github repo for master project
 
 ## TODO
 
-* welche richtung soll prototyp verbessert werden?
-    * implementierung in keras/tf?
-        größter benefit hinsichtlich performance. Kann jedochj sein,dass innerhalb der projektzeit nicht möglich ist. 
+* Add a confidence value for each sample to the sample object
+* Add functionality to the samples manager so it can update the confidence value of a sample
+* Check for each sample if confidence value is below a certain threshold and query av/model depending on it
 
-    * versuch methoden hinsichtlich detection rate zu verbessern in bestehendem projekt. Performance bleibt schlecht. Kann jedoch detection rate verbessern
-
-    * umstieg auf ganz anderen ansatz z.B. gym malware (Deep Q/Reinforcement learning) oder secml(Genetische Algorythmen)
-
-* Dokumentation der Ansätze genauer? Evaluierung in tabellarischer Form, genauere gegenüberstellung?
 
 ### Meeting 29.11.2024
 

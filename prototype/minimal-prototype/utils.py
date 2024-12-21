@@ -116,7 +116,7 @@ ACTION_TO_MICROACTION = {
         }
 
 set_copied_md5 = set()
-dict_sha256_to_vm_ip = {}           #TODO when a sample is finished, remember to delete that key-val.
+dict_sha256_to_vm_ip = {} 
 
 class Utils:
     def setup_logger(name, log_file, level=logging.INFO):
@@ -252,7 +252,7 @@ class Utils:
     def get_host_password():
         return config['SHARE_FOLDER']['host_password']
     
-    def get_vm_location():      # TODO remove vm_location
+    def get_vm_location(): 
         vm_location = config['SHARE_FOLDER']['vm_location']
         if vm_location == 'local':
             return VM_LOCAL

@@ -18,7 +18,13 @@ if __name__ == '__main__':
     bandit = Bandit()
     samples_manager = SamplesManager(Utils.get_malware_folder(), bandit)
 
+    
+
     print('\n### Log can be found in the log/ folder ###\n')
+    
+    """If the classifier is a local model it gets started. If it is just the av no need to start the model.
+    TODO: start model also when classifier is av.
+    """
     if Utils.get_classifier_scan_type() == SCAN_TYPE_MODEL:
         classifier = Classifier(Utils.get_classifier_name())
         classifier_thread = threading.Thread(target=classifier.run)
@@ -44,6 +50,10 @@ if __name__ == '__main__':
         rewriter = MABRewriter(bandit, samples_manager, rand=True)
         rewriter.run()
 
+
+    """If the classifier is a local model its thread gets joined. If it is just the av no need to join the thread.
+    TODO: start model also when classifier is av.
+    """
     if Utils.get_classifier_scan_type() == SCAN_TYPE_MODEL:
         classifier_thread.join()
     print("Done!")
