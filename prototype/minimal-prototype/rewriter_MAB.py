@@ -63,18 +63,7 @@ class MABRewriter:
                 sample.set_current_exe_path(output_path)
                 sample.append_arm(arm)
                 total_pull_count += 1
-                #if Utils.get_vm_location() == VM_CLOUD:
-                #    Utils.safe_copy(sample.current_exe_path, rewriter_send_buffer_folder)
-                #    #Utils.send_file_to_cloud(self.current_exe_path, scan_folder)
-                #else:
-                #    sample.copy_to_scan_folder(rewriter_scan_folder)
                 sample.copy_to_scan_folder(rewriter_scan_folder)
-
-                # clean up output_folder
-                ################# sample.delete_files_except_current_exe(rewriter_output_folder)
-                #list_previous = [x for x in os.listdir(rewriter_output_folder) if basename(sample.path) in x and x != basename(sample.current_exe_path)]
-                #for x in list_previous:
-                #    os.system('rm %s%s' %(rewriter_output_folder, x))
 
                 process_count += 1
                 if process_count % 100 == 0:            # update every x pulls
@@ -92,12 +81,6 @@ class MABRewriter:
                 time.sleep(1)
                 self.samples_manager.update_working_list()
 
-            #if Utils.get_vm_location() == VM_CLOUD:
-            #    # send files to cloud vms if the send_buffer_folder is full or excess time limit.
-            #    file_count = len(os.listdir(rewriter_send_buffer_folder))
-            #    if file_count > 10: # TODO
-            #        Utils.send_folder_to_cloud(rewriter_send_buffer_folder, rewriter_scan_folder)
-            
             count_skip = self.samples_manager.get_count_with_status(SAMPLE_STATUS_SKIP)
             count_evasive = self.samples_manager.get_count_with_status(SAMPLE_STATUS_EVASIVE)
             count_minimal = self.samples_manager.get_count_with_status(SAMPLE_STATUS_MINIMAL)
