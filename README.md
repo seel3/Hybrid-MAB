@@ -5,6 +5,10 @@ github repo for master project
 
 * Add a confidence value for each sample to the sample object
 * Add functionality to the samples manager so it can update the confidence value of a sample
+    
+    The model classes have already a function called get_score to get the score of a sample
+
+    
 * Check for each sample if confidence value is below a certain threshold and query av/model depending on it
 
 
