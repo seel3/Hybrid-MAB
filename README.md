@@ -3,13 +3,18 @@ github repo for master project
 
 ## TODO
 
+
+Idea 1:
 * Add a confidence value for each sample to the sample object
 * Add functionality to the samples manager so it can update the confidence value of a sample
     
     The model classes have already a function called get_score to get the score of a sample
-
-    
 * Check for each sample if confidence value is below a certain threshold and query av/model depending on it
+
+Idea 2:
+* Have 2 seperate malware folders for model and av
+* first only check those in model, if not detected move to av
+* if not detected in av folder -> evasive
 
 
 ### Meeting 29.11.2024

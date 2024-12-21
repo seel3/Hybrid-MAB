@@ -16,10 +16,6 @@ class Sample:
         self.scan_status = None   # file status on classifier
         #self.broken_action_idxs = set()
 
-        # confidence score of sample
-        self.confidence_score = None
-
-
         self.list_applied_arm = []
         self.list_useful_arm_idxs = []
 
@@ -51,22 +47,6 @@ class Sample:
         self.list_useful_arm_idxs = []
         self.pull_count = 0
 
-
-    def set_confidence_score(self, score):
-        """Setter for confidence_score
-
-        Args:
-            score (int): Confidence of the sample with respect to the classifier
-        """
-        self.confidence_score = score
-        
-    def get_confidence_score(self):
-        """Getter for confidence_score
-
-        Returns:
-            int: Confidence of the sample with respect to the classifier
-        """
-        return self.confidence_score
 
     def set_current_exe_path(self, path):
         self.current_exe_path = path
