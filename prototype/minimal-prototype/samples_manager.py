@@ -37,61 +37,6 @@ class SamplesManager:
                 count += 1
         return count
 
-    #def send_files_to_cloud(self, folder_path, dst_path, move=True):
-    #    list_sha256_send = [Utils.get_ori_name(x) for x in os.listdir(folder_path)]
-    #    if len(list_sha256_send) == 0:
-    #        return
-    #    #print(dst_path)
-
-    #    vm_ip = Utils.get_random_vm_ip()    # TODO support multiple vms
-    #    for sha256 in list_sha256_send:
-    #        dict_sha256_to_vm_ip[sha256] = vm_ip    # TODO
-
-    #    tmp_folder = 'output/%s' %datetime.now().strftime("%y%m%d_%H%M%S")
-    #    os.system('mkdir %s' %tmp_folder)
-    #    if move:
-    #        os.system('mv %s/* %s' %(folder_path, tmp_folder))
-    #    else:
-    #        os.system('cp -p %s/* %s' %(folder_path, tmp_folder))
-
-    #    package_path = 'output/%s.tar' %basename(tmp_folder)
-    #    cmd = 'tar --directory=%s -cvf %s . > /dev/null 2>&1' %(tmp_folder, package_path)
-    #    #print(cmd)
-    #    os.system(cmd)
-
-    #    vm_username = Utils.get_vm_username()
-
-    #    cmd = 'scp %s %s@%s:%s' %(package_path, vm_username, vm_ip, dst_path)
-    #    #print(cmd)
-    #    Utils.execute_on_cloud(cmd)
-
-    #    cmd = 'ssh %s@%s "tar -xf %s%s -C %s"' %(vm_username, vm_ip, dst_path, basename(package_path), dst_path)
-    #    #print(cmd)
-    #    Utils.execute_on_cloud(cmd)
-
-    #    cmd = 'ssh %s@%s del /Q %s%s' %(vm_username, vm_ip, dst_path, basename(package_path))
-    #    #print(cmd)
-    #    Utils.execute_on_cloud(cmd)
-
-    #    os.system('rm -r %s' %tmp_folder)
-    #    os.system('rm -r %s' %package_path)
-
-    #    # TODO update send time and sample.status
-    #    for sample in self.list_sample:
-    #        #print(basename(sample.path))
-    #        if basename(sample.path) in list_sha256_send:
-    #            sample.scan_status = SCAN_STATUS_WAITING
-    #            sample.copy_time = time.time()
-
-    #def remove_files_on_cloud(self, scan_folder, samples):
-    #    #list_file = [basename(sample.path) + '*' for sample in samples]
-    #    list_file = [basename(sample.current_exe_path) for sample in samples]
-    #    vm_ips = Utils.get_vm_ips()
-    #    for vm_ip in vm_ips:
-    #        cmd = 'ssh %s@%s "cd %s & del /Q %s"' %(Utils.get_vm_username(), vm_ip, scan_folder, ' '.join(list_file))
-    #        #print(cmd)
-    #        Utils.execute_on_cloud(cmd)
-    #    samples[:] = []
 
     def get_next_sample(self):
         list_pending = self.get_samples_with_status(SAMPLE_STATUS_PENDING)
@@ -145,35 +90,7 @@ class SamplesManager:
         logger_rew.info('remove remaining files.')
         #if Utils.get_vm_location() == VM_LOCAL:
         os.system('rm -f %s/*' %rewriter_scan_folder)
-        #elif Utils.get_vm_location() == VM_CLOUD:
-        #    Utils.remove_file_on_cloud(rewriter_scan_folder, '*')
-        #elif Utils.get_vm_location() == VM_CLOUD:
-        #    self.send_files_to_cloud(Utils.get_malware_folder(), rewriter_scan_folder, move=False)
-        #    #time.sleep(Utils.get_wait_time())
-        #    time.sleep(30)
-        #    #dict_sha256_to_md5 = Utils.get_md5s_from_cloud(rewriter_scan_folder)
-        #    for sample in self.list_sample:
-        #        #scan_status = sample.check_scan_status(rewriter_scan_folder, dict_sha256_to_md5)
-        #        scan_status = sample.check_scan_status(rewriter_scan_folder)
-        #        if scan_status == SCAN_STATUS_DELETED:
-        #            sample.status = SAMPLE_STATUS_PENDING
-        #        elif scan_status == SCAN_STATUS_PASS:
-        #            sample.status = SAMPLE_STATUS_SKIP
-        #    count_all = len(self.list_sample)
-        #    count_pending = count_skip = 0
-        #    for sample in self.list_sample:
-        #        if sample.status == SAMPLE_STATUS_PENDING:
-        #            count_pending += 1
-        #        elif sample.status == SAMPLE_STATUS_SKIP:
-        #            count_skip += 1
-        #    logger_rew.info('(%d/%d): detect %d, fail %d' %(count_pending + count_skip, count_all, count_pending, count_skip))
-        #    logger_rew.info('check finish.')
-        #    logger_rew.info('remove remaining files.')
-        #    #if Utils.get_vm_location() == VM_LOCAL:
-        #    #    os.system('rm -f %s/*' %rewriter_scan_folder)
-        #    #elif Utils.get_vm_location() == VM_CLOUD:
-        #    #    Utils.remove_file_on_cloud(rewriter_scan_folder, '*')
-        #    os.system('rm -f %s/*' %rewriter_scan_folder)
+   
 
     def update_working_list(self):
         # send all remaining files in send_buffer_folder
@@ -191,24 +108,7 @@ class SamplesManager:
             #vm_ip = Utils.get_vm_ip(sha256)
             #scan_status = sample.check_scan_status(rewriter_scan_folder, dict_sha256_to_md5)
             scan_status = sample.check_scan_status(rewriter_scan_folder)
-            #print('scan_status:', sha256, scan_status)
-            #if scan_status in [SCAN_STATUS_OVERTIME, SCAN_STATUS_PASS, SCAN_STATUS_MD5_CHANGED]:
-            #    #print(basename(sample.current_exe_path), scan_status)
-            #    #TODO
-            #    pass
-            #    #self.rewriter_deleted_samples.append(sample)
-            #if scan_status == SCAN_STATUS_DELETED:
-            #    self.dict_vm_ip_to_delete_time[vm_ip] = datetime.now()
-            # TODO
-            #if vm_ip not in self.dict_vm_ip_to_delete_time:
-            #    time_diff = 0
-            #else:
-            #    time_diff = (datetime.now() - self.dict_vm_ip_to_delete_time[vm_ip]).total_seconds()
-            #print(time_diff)
-            #if time_diff > 60:
-            #    print('vm get stuck, sleep, waiting for interaction')
-            #    time.sleep(1000)
-            #logger_rew.info('update rewriter: %s [%s]' %(sample.sname, scan_status))
+    
             if len(sample.list_applied_arm) > 0:
                 #logger_rew.info('arm list: %s' %[id(x) for x in sample.list_applied_arm])
                 if scan_status == SCAN_STATUS_DELETED:
@@ -235,11 +135,7 @@ class SamplesManager:
         for sample in list_succ:
             last_arm = sample.list_applied_arm[-1]
             logger_rew.info('### Evade! %s (pull_count: %d)' %(sample.current_exe_path, sample.pull_count))
-            ## upate reward the last arm alpha +1       # now we update reward only after minimization
-            #self.bandit.update_reward_with_alpha_beta(last_arm.idx, 1, 0)
-            #if last_arm.idx in [0, 1, 2, 3]:        # OA SA SR SP
-            #    self.bandit.add_new_arm(last_arm)
-
+         
             logger_rew.info('%s exists: %d' %(sample.current_exe_path, os.path.exists(sample.current_exe_path)))
             logger_rew.info('mv %s %s' %(sample.current_exe_path, evasive_folder))
             os.system('mv %s %s' %(sample.current_exe_path, evasive_folder))
@@ -262,11 +158,7 @@ class SamplesManager:
             logger_rew.info('%-2d %-12s alpha: %-3d beta: %-3d' %(arm.idx, arm.description, self.bandit._as[idx], self.bandit._bs[idx]))
         logger_rew.info('==============================================')
 
-        # TODO
-        #if len(self.rewriter_deleted_samples) > 0:
-        #    self.remove_files_on_cloud(rewriter_scan_folder, self.rewriter_deleted_samples)
-        #    #self.rewriter_deleted_samples = []
-
+   
     def minimize_evasive_sample(self):
         list_evasive = self.get_samples_with_status(SAMPLE_STATUS_EVASIVE)
         for sample in list_evasive:
@@ -294,21 +186,14 @@ class SamplesManager:
                     #    os.system('rm %s%s' %(minimizer_output_folder, x))
 
     def update_evasive_list(self):
-        # send all remaining files in send_buffer_folder
-        #self.send_files_to_cloud(minimizer_send_buffer_folder, minimizer_scan_folder)
-        #dict_sha256_to_md5 = Utils.get_md5s_from_cloud(minimizer_scan_folder)
-        #print(dict_sha256_to_md5)
+      
         list_evasive = self.get_samples_with_status(SAMPLE_STATUS_EVASIVE)
         #print('len evasive:', len(list_evasive))
         for sample in list_evasive:
             if sample.scan_status == SCAN_STATUS_WAITING:
                 #sample.scan_status = sample.check_scan_status(minimizer_scan_folder, dict_sha256_to_md5)
                 sample.scan_status = sample.check_scan_status(minimizer_scan_folder)
-                #print('sample.scan_status:', sample.scan_status)
-                #print(basename(sample.path), 'sample.scan_status:', sample.scan_status)
-                #if scan_status in [SCAN_STATUS_OVERTIME, SCAN_STATUS_PASS, SCAN_STATUS_MD5_CHANGED]:
-                #    self.minimizer_deleted_samples.append(sample)
-                #logger_min.info('%s: [%s]' %(sample.sname, sample.scan_status))
+              
                 if sample.scan_status == SCAN_STATUS_DELETED:
                     logger_min.info('%s: [FAIL] %s' %(sample.sname, sample.current_exe_path))
                     if sample.seq_cur_y == 0:
@@ -329,16 +214,7 @@ class SamplesManager:
 
                     # clean up scan_folder
                     os.system('rm -f %s/%s*' %(minimizer_scan_folder, basename(sample.path)))
-                    #sample.delete_scan_folder_copy(minimizer_scan_folder)
-                    #self.minimizer_deleted_samples.append(sample)
-
-                    ## clean up output_folder 
-                    #list_previous_evasive = [x for x in os.listdir(minimizer_output_folder) if basename(sample.path) in x and x != basename(sample.current_exe_path)]
-                    #for x in list_previous_evasive:
-                    #    #logger_min.info('rm %s%s' %(minimizer_output_folder, x))
-                    #    os.system('rm %s%s' %(minimizer_output_folder, x))
-
-                    #sample.scan_status = SCAN_STATUS_DELETED
+                  
                     sample.list_minimal_arm = [ arm for arm in sample.current_applied_arm_subset if arm ]
                     sample.inc_seq_cur_x()
             if sample.seq_cur_x >= len(sample.list_applied_arm) or sample.status == SAMPLE_STATUS_MINIMAL:
@@ -365,13 +241,8 @@ class SamplesManager:
                     if ori_arm.idx in [0, 1, 2, 3]:     # OA SA SR SP
                         self.bandit.add_new_arm(ori_arm)
 
-                # clean up at the end
-                #sample.delete_scan_folder_copy(minimizer_scan_folder)
-                #self.minimizer_deleted_samples.append(sample)
+             
                 sample.delete_tmp_files(minimizer_output_folder)
-
-        #if len(self.minimizer_deleted_samples) > 0:
-        #    self.remove_files_on_cloud(minimizer_scan_folder, self.minimizer_deleted_samples)
 
     def update_minimal_list(self):
         list_minimal = self.get_samples_with_status(SAMPLE_STATUS_MINIMAL)
