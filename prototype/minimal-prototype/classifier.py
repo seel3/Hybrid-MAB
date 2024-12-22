@@ -64,12 +64,23 @@ class Classifier:
                 logger_cla.info('file does not exist')
                 return 0
             #result = self.model.predict(file_path)
-            evasive = self.model.is_evasive(file_path)
-            if evasive == False:
-                logger_cla.info('Malicious! delete %s' %file_path)
-                os.system('rm %s' %(file_path))
-            else:
+
+            score = self.model.get_score(file_path)
+            
+            # TODO: read thresholds from config
+            
+            if score < 0.5: 
+                # malware is classified as benign with high confidence 
                 logger_cla.info('#### Benign! #### %s' %file_path)
                 os.system('mv %s %s.benign' %(file_path, file_path))
+                
+            if  0.5 < score < 0.9:
+                # classifier is unsure if malware or benign
+                logger_cla.info('#### Unsure. Moving to AV! #### %s' %file_path)
+                os.system('mv %s data/share/av/rewriter/%s' %(file_path, os.path.basename(file_path)))
+            else:
+                # classifier is very sure that it is malware
+                logger_cla.info('Malicious! delete %s' %file_path)
+                os.system('rm %s' %(file_path))
             return 1
         return 0

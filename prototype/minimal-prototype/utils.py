@@ -324,6 +324,9 @@ class Utils:
         os.system('rm -fr %s/*' %rewriter_scan_folder)
         os.system('mkdir -p %s' %minimizer_scan_folder)
         os.system('rm -fr %s/*' %minimizer_scan_folder)
+        
+        os.system('mkdir -p %s' %rewriter_output_folder_av)
+        os.system('rm -fr %s/*' %rewriter_output_folder_av)
 
         os.system('mkdir -p %s' %evasive_folder)
         os.system('rm -fr %s/*' %evasive_folder)
@@ -354,6 +357,8 @@ copy_tmp_folder = 'data/share/tmp/'
 
 rewriter_output_folder = 'output/rewriter_output/'
 minimizer_output_folder = 'output/minimizer_output/'
+
+rewriter_output_folder_av = 'data/share/av/rewriter/'
 
 evasive_folder = Utils.get_evasive_folder()
 minimal_folder = Utils.get_minimal_folder()
