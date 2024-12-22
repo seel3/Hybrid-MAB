@@ -1,7 +1,7 @@
 Ember:
 1: 688m 25.774s (homeserver CPU)
 2: 272m18.029s (gpu-server GPU)
-3:
+3: 278m3.196s (gpu-server GPU)
 4:
 5:
 
