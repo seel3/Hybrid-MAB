@@ -22,14 +22,14 @@ if __name__ == '__main__':
 
     print('\n### Log can be found in the log/ folder ###\n')
     
-    """If the classifier is a local model it gets started. If it is just the av no need to start the model.
-    TODO: start model also when classifier is av.
-    """
-    if Utils.get_classifier_scan_type() == SCAN_TYPE_MODEL:
-        classifier = Classifier(Utils.get_classifier_name())
-        classifier_thread = threading.Thread(target=classifier.run)
-        print('start classifier...')
-        classifier_thread.start()
+
+    classifier = Classifier(Utils.get_classifier_name())
+    classifier_thread = threading.Thread(target=classifier.run)
+    print('start classifier...')
+    classifier_thread.start()
+    
+    
+    
 
     rewriter_type = Utils.get_rewriter_type()
     if rewriter_type == 'MAB':
@@ -51,9 +51,6 @@ if __name__ == '__main__':
         rewriter.run()
 
 
-    """If the classifier is a local model its thread gets joined. If it is just the av no need to join the thread.
-    TODO: start model also when classifier is av.
-    """
-    if Utils.get_classifier_scan_type() == SCAN_TYPE_MODEL:
-        classifier_thread.join()
+
+    classifier_thread.join()
     print("Done!")

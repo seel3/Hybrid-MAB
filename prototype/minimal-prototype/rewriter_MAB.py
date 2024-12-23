@@ -39,22 +39,21 @@ class MABRewriter:
         os.system('rename \'s/\./\_/\' %s/*' %(dirname(output_path)))
 
     def run(self):
+        # get initial classification of the samples
         self.samples_manager.get_initial_pending_list()
-        #for sample in self.samples_manager.list_sample:
-        #    sample.status = SAMPLE_STATUS_PENDING
-
         trial_amount = self.samples_manager.get_count_with_status(SAMPLE_STATUS_PENDING) * Utils.get_max_pull()
-        #logger_rew.info('trial_amount: %d' %trial_amount)
         logger_rew.info('TS: %d update parent: %d' %(Utils.is_thompson_sampling(), Utils.get_update_parent()))
-
         total_pull_count = 0
         logger_rew.info('===========================================')
         process_count = 0
         count_skip = 0
         count_solve = 0
         count_need = 0
-        #while(total_pull_count < trial_amount):
         max_pull_count = Utils.get_max_pull()
+        
+        
+        
+        # rewriter loop will run until all samples are pulled max_pull_count times or all samples are evasive
         while True:
             sample = self.samples_manager.get_next_sample()
             if sample:

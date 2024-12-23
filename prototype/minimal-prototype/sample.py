@@ -117,8 +117,21 @@ class Sample:
 
 
     def check_scan_status(self, scan_folder):
+        """function to check the scan status of the sample and set it according to observations
+
+        Args:
+            scan_folder (path): The folder to check the samples from
+
+        Returns:
+            int: scan status of the sample
+        """
         Utils.wait_on_stop_sign()
-        if Utils.get_classifier_scan_type() == SCAN_TYPE_MODEL:
+        
+        # changed check from scan type to scan folder
+        # if folder is not av, then it is a classifier folder 
+        # if folder contains av, it was to be scanned by the av
+        if "av" not in scan_folder:
+            print (scan_folder)
             scan_status = SCAN_STATUS_DELETED
             sha256 = basename(self.path)
             for file_path in glob.glob('%s%s*' %(scan_folder, sha256)):

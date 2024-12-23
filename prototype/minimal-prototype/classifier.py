@@ -48,14 +48,14 @@ class Classifier:
                     exit()
     
     def evaluate(self, classifier_input):
-        #logger_cla.info('evaluate %s' %(classifier_input))
+        # search for files in the input folder
+        # add them to benign list if extension is .benign
+        # else add them to list_file 
         set_benign_files = set(glob.glob(classifier_input + '*.benign'))
         list_file = [x for x in glob.glob(classifier_input + '*') if x not in set_benign_files]
-    
+
         file_amount = len(list_file)
-        #logger_cla.info('================= %d ===================' %file_amount)
-        #if file_amount == 0:
-        #    time.sleep(1)
+        
         if file_amount > 0:
             list_file.sort(key=os.path.getmtime)
             file_path = list_file[0]

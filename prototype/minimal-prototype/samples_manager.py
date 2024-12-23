@@ -14,18 +14,12 @@ class SamplesManager:
 
         self.sample_concurrent_limit = Utils.get_max_working_sample_count()
 
-        #list_file = os.listdir(sample_folder)
         list_file = glob.glob('%s*' %sample_folder)
         list_file.sort()
         for x in list_file:
             sample = Sample(x)
             self.list_sample.append(sample)
         
-        # vm last delete time
-        #self.dict_vm_ip_to_delete_time = {}
-
-        #self.rewriter_deleted_samples = []
-        #self.minimizer_deleted_samples = []
 
     def get_samples_with_status(self, status):
         return [ sample for sample in self.list_sample if sample.status == status ]
@@ -57,13 +51,14 @@ class SamplesManager:
                 return sample
 
     def get_initial_pending_list(self):
+        """Performs initial check if the classifier can detect the original samples.
+        Can be left as it is since the initial classification is only run once and always done by the model
+        """
         logger_rew.info('check whether classifier can detect the original samples...')
         #if Utils.get_vm_location() == VM_LOCAL:
         for sample in self.list_sample:
             #logger_rew.info('copy_to_scan_folder: %s' %sample.sname)
             sample.copy_to_scan_folder(rewriter_scan_folder)
-            if Utils.get_classifier_scan_type() == SCAN_TYPE_AV:
-                time.sleep(1)
         logger_rew.info('copy finish')
         while(True):
             for sample in self.list_sample:
@@ -93,20 +88,15 @@ class SamplesManager:
    
 
     def update_working_list(self):
-        # send all remaining files in send_buffer_folder
-        #self.send_files_to_cloud(rewriter_send_buffer_folder, rewriter_scan_folder)
+
         list_working = self.get_samples_with_status(SAMPLE_STATUS_WORKING)
         logger_rew.info('len list_working: %d' %len(list_working))
         list_fail = []
         list_succ = []
-        #dict_sha256_to_md5 = Utils.get_md5s_from_cloud(rewriter_scan_folder)
-        #print(dict_sha256_to_md5)
 
-        #print('len(list_working):', len(list_working))
         for sample in list_working:
             sha256 = Utils.get_ori_name(sample.path)
-            #vm_ip = Utils.get_vm_ip(sha256)
-            #scan_status = sample.check_scan_status(rewriter_scan_folder, dict_sha256_to_md5)
+
             scan_status = sample.check_scan_status(rewriter_scan_folder)
     
             if len(sample.list_applied_arm) > 0:
@@ -115,9 +105,6 @@ class SamplesManager:
                     list_fail.append(sample)
                 elif scan_status == SCAN_STATUS_PASS:
                     list_succ.append(sample)
-
-        #print('fail:', len(list_fail))
-        #print('succ:', len(list_succ))
 
         for sample in list_fail:
             if len(sample.list_applied_arm) > 0:
@@ -144,9 +131,7 @@ class SamplesManager:
 
             sample.evasive_path = evasive_folder + basename(sample.current_exe_path)
             sample.set_current_exe_path(sample.evasive_path)
-            # remove tmp files  # TODO
-            #sample.delete_scan_folder_copy(rewriter_scan_folder)
-            #self.rewriter_deleted_samples.append(sample)
+
             os.system('rm -f %s%s' %(rewriter_scan_folder, basename(sample.current_exe_path)))
             sample.delete_tmp_files(rewriter_output_folder)
             sample.scan_status = SCAN_STATUS_DELETED        # for minimization
@@ -191,7 +176,7 @@ class SamplesManager:
         #print('len evasive:', len(list_evasive))
         for sample in list_evasive:
             if sample.scan_status == SCAN_STATUS_WAITING:
-                #sample.scan_status = sample.check_scan_status(minimizer_scan_folder, dict_sha256_to_md5)
+
                 sample.scan_status = sample.check_scan_status(minimizer_scan_folder)
               
                 if sample.scan_status == SCAN_STATUS_DELETED:
