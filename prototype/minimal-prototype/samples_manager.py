@@ -3,6 +3,7 @@ import random
 from models import *
 from sample import Sample
 from arm import *
+from pathlib import Path
 
 class SamplesManager:
     def __init__(self, sample_folder, bandit):
@@ -37,7 +38,7 @@ class SamplesManager:
         max_pull_count = Utils.get_max_pull()
         list_pending = [x for x in list_pending if x.pull_count < max_pull_count]
         if len(list_pending) > 0:
-            #for _ in range(10):
+
             count_working = self.get_count_with_status(SAMPLE_STATUS_WORKING)
             if count_working >= self.sample_concurrent_limit:
                 logger_rew.info('concurrent sample %d is more than %d, waiting...' %(count_working, self.sample_concurrent_limit))
@@ -55,17 +56,16 @@ class SamplesManager:
         Can be left as it is since the initial classification is only run once and always done by the model
         """
         logger_rew.info('check whether classifier can detect the original samples...')
-        #if Utils.get_vm_location() == VM_LOCAL:
+
         for sample in self.list_sample:
-            #logger_rew.info('copy_to_scan_folder: %s' %sample.sname)
+
             sample.copy_to_scan_folder(rewriter_scan_folder)
         logger_rew.info('copy finish')
         while(True):
             for sample in self.list_sample:
                 if sample.status == None:
                     scan_status = sample.check_scan_status(rewriter_scan_folder)
-                    #logger_rew.info('%s: %s' %(sample.sname, scan_status))
-                    #if scan_status in [SCAN_STATUS_DELETED, SCAN_STATUS_OVERTIME]:
+
                     if scan_status == SCAN_STATUS_DELETED:
                         sample.status = SAMPLE_STATUS_PENDING
                     elif scan_status == SCAN_STATUS_PASS:
@@ -83,24 +83,29 @@ class SamplesManager:
                 break
         logger_rew.info('check finish.')
         logger_rew.info('remove remaining files.')
-        #if Utils.get_vm_location() == VM_LOCAL:
+
         os.system('rm -f %s/*' %rewriter_scan_folder)
    
 
     def update_working_list(self):
-
+        
         list_working = self.get_samples_with_status(SAMPLE_STATUS_WORKING)
         logger_rew.info('len list_working: %d' %len(list_working))
         list_fail = []
         list_succ = []
 
+        # get sha256 of all samples
         for sample in list_working:
             sha256 = Utils.get_ori_name(sample.path)
-
-            scan_status = sample.check_scan_status(rewriter_scan_folder)
+            
+            # check where the sample is and call the function with either av path or model path 
+            if any(sha256 in filename for filename in os.listdir(av_folder)):
+                scan_status = sample.check_scan_status(av_folder) 
+            else:
+                scan_status = sample.check_scan_status(rewriter_scan_folder)
     
             if len(sample.list_applied_arm) > 0:
-                #logger_rew.info('arm list: %s' %[id(x) for x in sample.list_applied_arm])
+
                 if scan_status == SCAN_STATUS_DELETED:
                     list_fail.append(sample)
                 elif scan_status == SCAN_STATUS_PASS:
@@ -112,12 +117,12 @@ class SamplesManager:
                 # update reward for the last arm beta +1
                 self.bandit.update_reward_with_alpha_beta(last_arm.idx, 0, 1)
                 if len(sample.list_applied_arm) >= sample.max_length:
-                    # restart: delete all related 1) arms 2) files on disk after max_length(10) tries
+
                     logger_rew.info('restart: delete %s related arms and files on disk after max_length(%d) tries' %(sample.sname, sample.max_length))
                     sample.delete_applied_arm()
                     sample.delete_tmp_files(rewriter_output_folder)
                     sample.set_current_exe_path(sample.path)
-                #self.rewriter_deleted_samples.append(sample)
+
                 sample.status = SAMPLE_STATUS_PENDING
         for sample in list_succ:
             last_arm = sample.list_applied_arm[-1]
@@ -147,7 +152,7 @@ class SamplesManager:
     def minimize_evasive_sample(self):
         list_evasive = self.get_samples_with_status(SAMPLE_STATUS_EVASIVE)
         for sample in list_evasive:
-            #logger_min.info('sample.scan_status: %s' %sample.scan_status)
+
             if sample.scan_status in [SCAN_STATUS_DELETED, SCAN_STATUS_PASS]:
                 if sample.seq_cur_x < len(sample.list_applied_arm):
                     ret = sample.prepare_action_subset()
@@ -157,26 +162,19 @@ class SamplesManager:
                     ori_arm_names = str(sample.get_names_from_arm_list(sample.list_applied_arm)).replace('\'', '').replace(' ', '').replace('None', '--')
                     cur_arm_names = str(sample.get_names_from_arm_list(sample.current_applied_arm_subset)).replace('\'', '').replace(' ', '').replace('None', '--')
                     logger_min.info('%s: %s (%d, %d) %s' %(sample.sname, ori_arm_names, sample.seq_cur_x, sample.seq_cur_y, cur_arm_names))
-                    #if Utils.get_vm_location() == VM_CLOUD:
-                    #    Utils.safe_copy(sample.current_exe_path, minimizer_scan_folder)
-                    #else:
-                    #   sample.copy_to_scan_folder(minimizer_scan_folder)
-                    #   sample.scan_status = SCAN_STATUS_WAITING
+
                     sample.copy_to_scan_folder(minimizer_scan_folder)
 
-                    # clean up output_folder
-                    ################################ sample.delete_files_except_current_exe(minimizer_output_folder)
-                    #list_previous = [x for x in os.listdir(minimizer_output_folder) if basename(sample.path) in x and x != basename(sample.current_exe_path)]
-                    #for x in list_previous:
-                    #    os.system('rm %s%s' %(minimizer_output_folder, x))
+
 
     def update_evasive_list(self):
       
         list_evasive = self.get_samples_with_status(SAMPLE_STATUS_EVASIVE)
-        #print('len evasive:', len(list_evasive))
+
         for sample in list_evasive:
             if sample.scan_status == SCAN_STATUS_WAITING:
 
+                # TODO: check if the sample is in av or model folder
                 sample.scan_status = sample.check_scan_status(minimizer_scan_folder)
               
                 if sample.scan_status == SCAN_STATUS_DELETED:
@@ -184,10 +182,7 @@ class SamplesManager:
                     if sample.seq_cur_y == 0:
                         sample.list_useful_arm_idxs.append(sample.seq_cur_x)
                     sample.inc_seq_cur_y()
-                    # clean up: remove current sample
-                    #if 'minimizer_output' in sample.current_exe_path:
-                    #    #logger_min.info('rm -f %s' %(sample.current_exe_path))
-                    #    os.system('rm -f %s' %(sample.current_exe_path))
+
                 elif sample.scan_status == SCAN_STATUS_PASS:
                     sample.latest_minimal_path = sample.current_exe_path
                     logger_min.info('%s: [SUCC] %s' %(sample.sname, sample.current_exe_path))
@@ -235,10 +230,10 @@ class SamplesManager:
             # if not submitted, submit, otherwise get existing task_id
             minimal_path = sample.get_minimal_file()
             task_id = self.cuckoo.get_task_id(minimal_path)
-            #logger_cuc.info('task_id: %s' %task_id)
+
 
             cuckoo_status = self.cuckoo.get_task_status(task_id)
-            #logger_cuc.info('%s: cuckoo_status: %s' %(sample.sname, cuckoo_status))
+
 
             if cuckoo_status == 'reported':
                 functional = self.cuckoo.is_functional(task_id, sample.path)
@@ -250,7 +245,7 @@ class SamplesManager:
                 else:
                     # non-functional, try again
                     logger_cuc.info('%s: Evasive sample is broken, add it back to pool' %sample.sname)
-                    #sample.update_broken_action_idxs()
+
                     sample.reset()      # reset members, except broken_action_idxs!!
                     sample.status = SAMPLE_STATUS_PENDING   ########################## add back to pending queue
                 self.cuckoo.del_sample_and_task(minimal_path)    # clean up cuckoo

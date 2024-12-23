@@ -18,7 +18,6 @@ class MABRewriter:
                 if arm.action == 'CR':
                     continue
                 output_path = arm.pull(sample)
-                print(output_path)
                 if os.path.exists(output_path):
                     md5_arm = sample.get_md5(output_path)
                     if md5 == md5_arm:
@@ -53,7 +52,7 @@ class MABRewriter:
         
         
         
-        # rewriter loop will run until all samples are pulled max_pull_count times or all samples are evasive
+        # rewriter loop 
         while True:
             sample = self.samples_manager.get_next_sample()
             if sample:
@@ -72,7 +71,7 @@ class MABRewriter:
                 count_working = self.samples_manager.get_count_with_status(SAMPLE_STATUS_WORKING)
                 if count_working == 0:
                     count_remain = len([x for x in self.samples_manager.get_samples_with_status(SAMPLE_STATUS_PENDING) if x.pull_count < max_pull_count])
-                    #print('count_remain: ', count_remain)
+
                     if count_remain == 0:
                         logger_rew.info('###### All samples are pulled 60 times!')
                         break

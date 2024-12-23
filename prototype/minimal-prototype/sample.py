@@ -131,7 +131,6 @@ class Sample:
         # if folder is not av, then it is a classifier folder 
         # if folder contains av, it was to be scanned by the av
         if "av" not in scan_folder:
-            print (scan_folder)
             scan_status = SCAN_STATUS_DELETED
             sha256 = basename(self.path)
             for file_path in glob.glob('%s%s*' %(scan_folder, sha256)):
@@ -144,9 +143,11 @@ class Sample:
                 os.system('rm -f %s/*%s*' %(scan_folder, basename(self.path)))
             return scan_status
         else:
-            #for filename in os.listdir(scan_folder) if basename(self.path) in x]
+            # av scan
             sha256 = basename(self.path)
-            list_file = glob.glob('%s%s*' %(scan_folder, sha256))
+            # added av subpath to scan folder
+            list_file = glob.glob('%s%s*' %((scan_folder), sha256))
+            
             if len(list_file) == 0:
                 scan_status = SCAN_STATUS_DELETED
             else:

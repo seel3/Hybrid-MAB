@@ -77,7 +77,7 @@ class Classifier:
             if  0.5 < score < 0.9:
                 # classifier is unsure if malware or benign
                 logger_cla.info('#### Unsure. Moving to AV! #### %s' %file_path)
-                os.system('mv %s data/share/av/rewriter/%s' %(file_path, os.path.basename(file_path)))
+                os.system('mv %s data/share/av/%s' %(file_path, os.path.basename(file_path)))
             else:
                 # classifier is very sure that it is malware
                 logger_cla.info('Malicious! delete %s' %file_path)

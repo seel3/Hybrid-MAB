@@ -358,7 +358,9 @@ copy_tmp_folder = 'data/share/tmp/'
 rewriter_output_folder = 'output/rewriter_output/'
 minimizer_output_folder = 'output/minimizer_output/'
 
-rewriter_output_folder_av = 'data/share/av/rewriter/'
+rewriter_output_folder_av = 'data/share/av/'
+av_folder = "data/share/av/"
+
 
 evasive_folder = Utils.get_evasive_folder()
 minimal_folder = Utils.get_minimal_folder()
