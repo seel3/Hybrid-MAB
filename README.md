@@ -1,50 +1,22 @@
 # masterprojekt
-github repo for master project
+This is the github repo for masterproject "Machine Learning-Assisted Modification of PE
+Malware for Antivirus Evasion"
+
+The goal of this project is to create evasive malware samples using the multi armed bandit approach proposed by [song et. al](https://github.com/bitsecurerlab/MAB-malware).
+
+This project extends the functionality of the MAB Malware Project by introducing a "hybrid mode" in which local av models like ember/malcov and defender are simontaneously queried in order to enhance performance while maintaining the same effectiveness.
+
+
+## Hybrid Mode
+Hybrid Mode has the same target as the av mode: an antivirus solution run inside a vm. However, the av mode took significantly longer (~3.6 times) than the model mode using ember/malconv. 
+
+This is due to the fact that the av mode requires timeconsuming I/O operations as well as a certain scan period that is longer than that of ember/malconv.
+
+To tackle this Problem the hybrid mode uses primarely the model to detect wether a sample is malicious or benign. Whenever the model can not determine if the sample is malware or not with a certanty above a fixed threshold, the av model is queried instead.
+
+
 
 ## TODO
-
-
-Idea 1:
-* Add a confidence value for each sample to the sample object
-* Add functionality to the samples manager so it can update the confidence value of a sample
-    
-    The model classes have already a function called get_score to get the score of a sample
-* Check for each sample if confidence value is below a certain threshold and query av/model depending on it
-
-Idea 2:
-* Have 2 seperate malware folders for model and av
-* first only check those in model, if not detected move to av
-* if not detected in av folder -> evasive
-
-
-### Meeting 29.11.2024
-
-Kolloquium sagen: unterschied zwischen Sandbox ansatz und functionality preserving
-
-warum functionality preservingness besser ist
-
-Für kolloquium alles erklären
-
-gib acht alle Begriffe zu erklären dass sie jeder versteht.
-
-wichtige erkenntnis is dass es aus sicht des eval schritts enorm schwer zu bewerten sind. Grundsatzentscheidung ausschließen wo man test nicht machen kann.
-
-Fokus auf Prototyp und Entscheidung die in dem meeting getroffen wurden.
-
-Erklärung für alle Fachbegriffe
-
-
-
-
-
-Operation raussuchen und die ersetzten mit Neuronalem netzwerk.
-    Thompson sampling z.B. könnte erbessert werden.
-    Approximate steps through Neural network
-
-    Nicht neu implemetieren in keras sondern am code arbeiten.
-
-
-    hypersensibles modell das defender ersetzt teils. Modell finetunen oder existierendes nutzen.
-
-    nutzen von confidence level von e.g. malconv um defender aufruf zu ersetzten. z.b. erst ab 50% confidence von malconv den windows defender befragen zu malware sample.
-
+* Rewriter seems to work but minimizer does appareantly not work with av samples.
+* Thompson Sampling does not work and throws errors
+* AV querying could be done using AMSI instead of just dropping the files on disk. This could be achieved by a client/server architecture where the rewriter can query amsi directly and get immediate feedback about a sample
