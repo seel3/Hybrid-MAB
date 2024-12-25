@@ -5,12 +5,8 @@ import time
 import datetime
 from utils import *
 from models import *
-
-#from ember import predict_sample
-#import lightgbm as lgb
-#import numpy as np
 import glob
-#from torch.autograd import Variable
+
 
 MALCONV_MODEL_PATH = 'models/malconv/malconv.checkpoint'
 EMBER_2019_MODEL_PATH = 'models/ember_2019/ember_model.txt'
@@ -25,8 +21,7 @@ class Classifier:
             self.model = MalConvModel( MALCONV_MODEL_PATH, thresh=0.5 )
         elif classifier_name == 'ember':
             self.model = EmberModel_2019( EMBER_2019_MODEL_PATH, thresh=0.8336 )
-        #elif classifier_name == 'clamav':
-        #    self.model = ClamAV()
+
         else:
             print('bad classifier_name, please check configure')
             exit()
@@ -59,23 +54,22 @@ class Classifier:
         if file_amount > 0:
             list_file.sort(key=os.path.getmtime)
             file_path = list_file[0]
-            #logger_cla.info(file_path)
+
             if os.path.exists(file_path) == False:
                 logger_cla.info('file does not exist')
                 return 0
-            #result = self.model.predict(file_path)
 
             score = self.model.get_score(file_path)
             
             # TODO: read thresholds from config
-            
-            if score < 0.5: 
+            if score <= model_lower_bound: 
                 # malware is classified as benign with high confidence 
                 logger_cla.info('#### Benign! #### %s' %file_path)
                 os.system('mv %s %s.benign' %(file_path, file_path))
                 
-            if  0.5 < score < 0.9:
+            if  model_lower_bound < score < model_upper_bound:
                 # classifier is unsure if malware or benign
+                # TODO: check if this might be problem when called for minimizer
                 logger_cla.info('#### Unsure. Moving to AV! #### %s' %file_path)
                 os.system('mv %s data/share/av/%s' %(file_path, os.path.basename(file_path)))
             else:
