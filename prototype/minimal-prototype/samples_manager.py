@@ -174,7 +174,6 @@ class SamplesManager:
         for sample in list_evasive:
             if sample.scan_status == SCAN_STATUS_WAITING:
 
-                # TODO: check if the sample is in av or model folder
                 sample.scan_status = sample.check_scan_status(minimizer_scan_folder)
               
                 if sample.scan_status == SCAN_STATUS_DELETED:

@@ -1,0 +1,473 @@
+minimal-prototype/arm.py:1:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/arm.py:22:9: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:24:55: 'rewriter_output_folder' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:26:50: 'rewriter_output_folder' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:34:25: 'basename' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:37:21: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:40:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:52:9: local variable 'e' is assigned to but never used
+minimal-prototype/arm.py:53:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:55:21: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:56:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:82:9: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:129:50: 'rewriter_output_folder' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:131:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:134:9: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:137:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:138:34: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:140:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:149:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:160:50: 'rewriter_output_folder' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:162:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:170:21: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:194:25: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:197:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:198:13: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:210:50: 'rewriter_output_folder' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:212:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:219:21: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:224:29: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:237:25: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:240:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:241:13: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:253:50: 'rewriter_output_folder' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:255:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:258:19: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:258:51: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:259:12: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:260:13: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:262:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:265:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:266:13: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:272:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:273:13: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:285:50: 'rewriter_output_folder' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:287:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:300:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:303:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:304:13: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:338:50: 'rewriter_output_folder' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:340:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:353:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:354:13: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:370:34: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:381:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:388:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:389:13: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:401:50: 'rewriter_output_folder' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:403:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:419:29: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:421:13: local variable 'e' is assigned to but never used
+minimal-prototype/arm.py:425:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:435:21: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:436:17: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:439:13: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:480:50: 'rewriter_output_folder' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:482:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:488:13: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:503:38: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:505:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:531:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:532:13: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:565:50: 'rewriter_output_folder' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:567:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:576:50: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:579:39: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:586:13: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:600:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:601:13: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:607:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:608:13: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:613:21: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:626:9: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:628:25: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:662:9: local variable 'e' is assigned to but never used
+minimal-prototype/arm.py:664:21: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:665:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:666:13: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:673:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:676:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/arm.py:677:13: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/bandit.py:2:1: 'scipy.stats.beta' imported but unused
+minimal-prototype/bandit.py:3:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/bandit.py:4:1: 'from arm import *' used; unable to detect undefined names
+minimal-prototype/bandit.py:15:30: 'ArmOA' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:16:30: 'ArmSA' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:17:30: 'ArmSP' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:18:30: 'ArmSR' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:19:30: 'ArmRD' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:20:30: 'ArmRC' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:21:30: 'ArmBC' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:22:30: 'ArmCR' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:44:23: 'Utils' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:44:55: 'Utils' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:45:16: 'os' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:49:19: 'random' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:57:23: 'Utils' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:57:55: 'Utils' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:58:16: 'os' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:62:19: 'random' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:65:23: 'random' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:88:19: 'Utils' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:88:51: 'Utils' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:89:38: 'os' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:89:66: 'random' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:93:23: 'random' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:97:32: 'np' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:125:32: 'np' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:131:25: 'debug' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:144:57: redefinition of unused 'beta' from line 2
+minimal-prototype/bandit.py:145:9: 'logger_rew' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:146:12: 'Utils' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:156:12: 'Utils' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:164:12: 'Utils' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/bandit.py:175:17: 'logger_rew' may be undefined, or defined from star imports: arm, utils
+minimal-prototype/minimizer.py:1:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/minimizer.py:9:72: 'SAMPLE_STATUS_EVASIVE' may be undefined, or defined from star imports: utils
+minimal-prototype/minimizer.py:10:72: 'SAMPLE_STATUS_MINIMAL' may be undefined, or defined from star imports: utils
+minimal-prototype/minimizer.py:13:17: 'logger_min' may be undefined, or defined from star imports: utils
+minimal-prototype/minimizer.py:14:17: 'time' may be undefined, or defined from star imports: utils
+minimal-prototype/minimizer.py:18:20: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/minimizer.py:21:18: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/minimizer.py:21:92: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/minimizer.py:22:20: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/minimizer.py:22:35: 'REWRITER_EXIT_SIGN' may be undefined, or defined from star imports: utils
+minimal-prototype/minimizer.py:23:21: 'logger_min' may be undefined, or defined from star imports: utils
+minimal-prototype/minimizer.py:26:13: 'time' may be undefined, or defined from star imports: utils
+minimal-prototype/models.py:2:1: 'time' imported but unused
+minimal-prototype/models.py:3:1: 'requests' imported but unused
+minimal-prototype/models.py:8:1: 'json' imported but unused
+minimal-prototype/models.py:11:1: 'sys' imported but unused
+minimal-prototype/rewriter_MAB.py:37: SyntaxWarning: invalid escape sequence '\.'
+  print('rename \'s/\./\_/\' %s/*' %(dirname(output_path)))
+minimal-prototype/rewriter_MAB.py:38: SyntaxWarning: invalid escape sequence '\.'
+  os.system('rename \'s/\./\_/\' %s/*' %(dirname(output_path)))
+minimal-prototype/rewriter_MAB.py:1:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/rewriter_MAB.py:2:1: 'pexpect' imported but unused
+minimal-prototype/rewriter_MAB.py:6:31: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:13:9: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:13:76: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:21:20: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:25:25: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:28:33: 'modify_without_breaking' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:28:65: 'ACTION_MAP' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:32:28: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:36:33: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:37:44: 'dirname' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:38:9: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:38:48: 'dirname' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:43:67: 'SAMPLE_STATUS_PENDING' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:43:92: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:44:9: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:44:54: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:44:84: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:46:9: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:49:9: local variable 'count_solve' is assigned to but never used
+minimal-prototype/rewriter_MAB.py:51:26: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:64:44: 'rewriter_scan_folder' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:68:21: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:71:76: 'SAMPLE_STATUS_WORKING' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:73:97: 'SAMPLE_STATUS_PENDING' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:76:25: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:78:17: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:79:17: 'time' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:82:69: 'SAMPLE_STATUS_SKIP' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:83:72: 'SAMPLE_STATUS_EVASIVE' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:84:72: 'SAMPLE_STATUS_MINIMAL' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:85:75: 'SAMPLE_STATUS_FUNCTIONAL' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:87:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:88:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:93:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:95:16: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:103:9: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:105:72: 'SAMPLE_STATUS_WORKING' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:106:72: 'SAMPLE_STATUS_EVASIVE' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:107:72: 'SAMPLE_STATUS_MINIMAL' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:108:16: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:119:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:121:13: 'time' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:123:9: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:124:69: 'SAMPLE_STATUS_PENDING' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:126:13: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:127:37: 'rewriter_output_folder' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:129:9: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:130:9: 'os' may be undefined, or defined from star imports: utils
+minimal-prototype/rewriter_MAB.py:130:31: 'REWRITER_EXIT_SIGN' may be undefined, or defined from star imports: utils
+minimal-prototype/run_attack.py:5:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/run_attack.py:13:5: 'logger_rew' may be undefined, or defined from star imports: utils
+minimal-prototype/run_attack.py:14:5: 'logger_min' may be undefined, or defined from star imports: utils
+minimal-prototype/run_attack.py:15:5: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/run_attack.py:16:5: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/run_attack.py:19:38: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/run_attack.py:26:29: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/run_attack.py:34:21: 'Utils' may be undefined, or defined from star imports: utils
+minimal-prototype/sample.py:1:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/sample.py:3:1: 'from models import *' used; unable to detect undefined names
+minimal-prototype/sample.py:4:1: 'from arm import *' used; unable to detect undefined names
+minimal-prototype/sample.py:5:1: 'pathlib.Path' imported but unused
+minimal-prototype/sample.py:11:22: 'Utils' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:12:27: 'Utils' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:62:27: 'ACTION_TO_MICROACTION' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:87:9: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:88:9: 'os' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:88:46: 'basename' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:92:18: 'basename' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:94:42: 'os' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:95:45: 'os' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:98:17: 'os' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:104:28: 'SCAN_STATUS_WAITING' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:105:26: 'time' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:106:9: 'Utils' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:106:62: 'basename' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:110:21: 'Utils' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:111:25: 'time' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:128:9: 'Utils' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:134:27: 'SCAN_STATUS_DELETED' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:135:22: 'basename' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:136:30: 'glob' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:138:35: 'SCAN_STATUS_PASS' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:140:35: 'SCAN_STATUS_WAITING' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:142:32: 'SCAN_STATUS_PASS' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:143:17: 'os' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:143:58: 'basename' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:147:22: 'basename' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:149:25: 'glob' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:152:31: 'SCAN_STATUS_DELETED' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:155:35: 'SCAN_STATUS_PASS' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:157:35: 'SCAN_STATUS_WAITING' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:170:31: 'ACTION_TO_MICROACTION' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:181:31: 'ACTION_TO_MICROACTION' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:199:27: 'ArmOA' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:201:27: 'ArmOA' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:212:27: 'ArmCP1' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:214:13: 'logger_min' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:236:22: 'basename' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:237:25: 'glob' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:237:45: 'evasive_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:239:17: 'logger_min' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:247:13: 'logger_min' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:252:56: 'minimizer_output_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:253:42: 'os' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:254:21: 'os' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:261:49: 'rewriter_output_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/sample.py:264:13: 'logger_min' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:1:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/samples_manager.py:3:1: 'from models import *' used; unable to detect undefined names
+minimal-prototype/samples_manager.py:5:1: 'from arm import *' used; unable to detect undefined names
+minimal-prototype/samples_manager.py:6:1: 'pathlib.Path' imported but unused
+minimal-prototype/samples_manager.py:13:35: 'Utils' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:13:23: 'Cuckoo' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:16:40: 'Utils' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:18:21: 'glob' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:37:53: 'SAMPLE_STATUS_PENDING' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:38:26: 'Utils' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:42:56: 'SAMPLE_STATUS_WORKING' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:44:17: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:48:33: 'SAMPLE_STATUS_WORKING' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:49:60: 'SAMPLE_STATUS_WORKING' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:50:17: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:51:17: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:58:9: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:61:40: 'rewriter_scan_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:62:9: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:66:60: 'rewriter_scan_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:68:39: 'SCAN_STATUS_DELETED' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:69:41: 'SAMPLE_STATUS_PENDING' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:70:41: 'SCAN_STATUS_PASS' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:71:41: 'SAMPLE_STATUS_SKIP' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:75:37: 'SAMPLE_STATUS_PENDING' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:77:39: 'SAMPLE_STATUS_SKIP' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:79:13: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:80:13: 'time' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:83:9: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:84:9: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:86:9: 'os' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:86:33: 'rewriter_scan_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:91:53: 'SAMPLE_STATUS_WORKING' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:92:9: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:98:22: 'Utils' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:98:13: local variable 'sha256' is assigned to but never used
+minimal-prototype/samples_manager.py:101:79: 'os' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:101:90: 'av_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:101:17: 'basename' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:102:56: 'av_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:104:56: 'rewriter_scan_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:108:35: 'SCAN_STATUS_DELETED' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:110:37: 'SCAN_STATUS_PASS' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:120:21: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:122:45: 'rewriter_output_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:125:33: 'SAMPLE_STATUS_PENDING' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:128:13: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:130:13: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:130:72: 'os' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:131:13: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:131:67: 'evasive_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:132:13: 'os' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:132:61: 'evasive_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:133:24: 'evasive_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:133:41: 'basename' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:134:13: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:134:57: 'os' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:136:35: 'evasive_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:136:52: 'basename' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:139:13: 'os' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:139:38: 'rewriter_scan_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:139:60: 'basename' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:141:37: 'rewriter_output_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:142:34: 'SCAN_STATUS_DELETED' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:143:29: 'SAMPLE_STATUS_EVASIVE' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:144:9: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:145:9: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:148:13: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:149:9: 'logger_rew' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:153:53: 'SAMPLE_STATUS_EVASIVE' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:156:39: 'SCAN_STATUS_DELETED' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:156:60: 'SCAN_STATUS_PASS' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:164:21: 'logger_min' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:166:48: 'minimizer_scan_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:172:53: 'SAMPLE_STATUS_EVASIVE' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:175:38: 'SCAN_STATUS_WAITING' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:177:63: 'minimizer_scan_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:179:42: 'SCAN_STATUS_DELETED' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:180:21: 'logger_min' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:185:44: 'SCAN_STATUS_PASS' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:187:21: 'logger_min' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:189:25: 'logger_min' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:191:41: 'SAMPLE_STATUS_MINIMAL' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:195:21: 'os' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:195:48: 'minimizer_scan_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:195:71: 'basename' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:199:85: 'SAMPLE_STATUS_MINIMAL' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:200:33: 'SAMPLE_STATUS_MINIMAL' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:203:17: 'logger_min' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:204:17: 'os' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:204:57: 'minimal_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:209:17: 'logger_min' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:215:25: 'logger_min' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:218:25: 'logger_min' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:224:41: 'minimizer_output_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:227:53: 'SAMPLE_STATUS_MINIMAL' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:241:21: 'logger_cuc' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:242:21: 'os' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:242:58: 'functional_folder' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:243:37: 'SAMPLE_STATUS_FUNCTIONAL' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:246:21: 'logger_cuc' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:249:37: 'SAMPLE_STATUS_PENDING' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/samples_manager.py:252:17: 'time' may be undefined, or defined from star imports: arm, models, utils
+minimal-prototype/classifier.py:2:1: 'sys' imported but unused
+minimal-prototype/classifier.py:3:1: 'hashlib' imported but unused
+minimal-prototype/classifier.py:4:1: 'time' imported but unused
+minimal-prototype/classifier.py:5:1: 'datetime' imported but unused
+minimal-prototype/classifier.py:6:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/classifier.py:7:1: 'from models import *' used; unable to detect undefined names
+minimal-prototype/classifier.py:23:9: 'logger_cla' may be undefined, or defined from star imports: models, utils
+minimal-prototype/classifier.py:25:26: 'MalConvModel' may be undefined, or defined from star imports: models, utils
+minimal-prototype/classifier.py:27:26: 'EmberModel_2019' may be undefined, or defined from star imports: models, utils
+minimal-prototype/classifier.py:46:35: 'REWRITER_EXIT_SIGN' may be undefined, or defined from star imports: models, utils
+minimal-prototype/classifier.py:47:21: 'logger_cla' may be undefined, or defined from star imports: models, utils
+minimal-prototype/classifier.py:64:17: 'logger_cla' may be undefined, or defined from star imports: models, utils
+minimal-prototype/classifier.py:74:17: 'logger_cla' may be undefined, or defined from star imports: models, utils
+minimal-prototype/classifier.py:79:17: 'logger_cla' may be undefined, or defined from star imports: models, utils
+minimal-prototype/classifier.py:83:17: 'logger_cla' may be undefined, or defined from star imports: models, utils
+minimal-prototype/utils.py:2:1: 'glob' imported but unused
+minimal-prototype/utils.py:4:1: 'os.path.dirname' imported but unused
+minimal-prototype/utils.py:5:1: 'numpy as np' imported but unused
+minimal-prototype/utils.py:6:1: 'datetime.datetime' imported but unused
+minimal-prototype/utils.py:11:1: 'pexpect' imported but unused
+minimal-prototype/utils.py:157:9: local variable 'e' is assigned to but never used
+minimal-prototype/chart/action_combination.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/action_combination.py:5:1: 'from feature_contribution import *' used; unable to detect undefined names
+minimal-prototype/chart/action_combination.py:104:60: 'get_display_name' may be undefined, or defined from star imports: feature_contribution
+minimal-prototype/chart/changed_bytes.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/changed_bytes.py:5:1: 'from feature_contribution import *' used; unable to detect undefined names
+minimal-prototype/chart/changed_bytes.py:98:45: 'get_display_name' may be undefined, or defined from star imports: feature_contribution
+minimal-prototype/chart/evasion_rate.py:1:1: 'os' imported but unused
+minimal-prototype/chart/evasion_rate.py:3:1: 'datetime' imported but unused
+minimal-prototype/chart/evasion_rate.py:6:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/chart/evasion_rate.py:6:1: 'utils.*' imported but unused
+minimal-prototype/chart/evasion_rate_GP_MCTS_MAB.py:1:1: 'os' imported but unused
+minimal-prototype/chart/evasion_rate_GP_MCTS_MAB.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/evasion_rate_GP_MCTS_MAB.py:5:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/chart/evasion_rate_GP_MCTS_MAB.py:5:1: 'utils.*' imported but unused
+minimal-prototype/chart/evasion_rate_GP_MCTS_MAB.py:6:1: 'collections.defaultdict' imported but unused
+minimal-prototype/chart/evasion_rate_GP_MCTS_MAB.py:26:5: local variable 'list_rate' is assigned to but never used
+minimal-prototype/chart/evasion_rate_GP_MCTS_MAB.py:64:5: local variable 'av' is assigned to but never used
+minimal-prototype/chart/evasion_rate_MCTS.py:1:1: 'os' imported but unused
+minimal-prototype/chart/evasion_rate_MCTS.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/evasion_rate_MCTS.py:5:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/chart/evasion_rate_MCTS.py:5:1: 'utils.*' imported but unused
+minimal-prototype/chart/evasion_rate_MCTS.py:25:5: local variable 'r2' is assigned to but never used
+minimal-prototype/chart/evasion_rate_final_CCS2021.py:2:1: 'sys' imported but unused
+minimal-prototype/chart/evasion_rate_final_CCS2021.py:3:1: 'datetime' imported but unused
+minimal-prototype/chart/evasion_rate_final_CCS2021.py:6:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/chart/evasion_rate_final_CCS2021.py:6:1: 'utils.*' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_1000.py:1:1: 'os' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_1000.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_1000.py:5:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/chart/evasion_rate_of_attempts_1000.py:5:1: 'utils.*' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_av.py:1:1: 'os' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_av.py:2:1: 'sys' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_av.py:3:1: 'datetime' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_av.py:6:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/chart/evasion_rate_of_attempts_av.py:6:1: 'utils.*' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_av.py:54:9: local variable 'r2' is assigned to but never used
+minimal-prototype/chart/evasion_rate_of_attempts_av.py:55:9: local variable 'r3' is assigned to but never used
+minimal-prototype/chart/evasion_rate_of_attempts_ember_2019.py:1:1: 'os' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_ember_2019.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_ember_2019.py:5:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/chart/evasion_rate_of_attempts_ember_2019.py:5:1: 'utils.*' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_ember_2019.py:22:5: local variable 'r2' is assigned to but never used
+minimal-prototype/chart/evasion_rate_of_attempts_ember_2020.py:1:1: 'os' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_ember_2020.py:2:1: 'sys' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_ember_2020.py:3:1: 'datetime' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_ember_2020.py:6:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/chart/evasion_rate_of_attempts_ember_2020.py:6:1: 'utils.*' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_ember_2020.py:24:5: local variable 'r2' is assigned to but never used
+minimal-prototype/chart/evasion_rate_of_attempts_gym.py:1:1: 'os' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_gym.py:3:1: 'datetime' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_gym.py:6:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/chart/evasion_rate_of_attempts_gym.py:6:1: 'utils.*' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_gym.py:43:5: local variable 'r3' is assigned to but never used
+minimal-prototype/chart/evasion_rate_of_attempts_malconv.py:1:1: 'os' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_malconv.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_malconv.py:5:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/chart/evasion_rate_of_attempts_malconv.py:5:1: 'utils.*' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_malconv.py:22:5: local variable 'r2' is assigned to but never used
+minimal-prototype/chart/evasion_rate_of_attempts_nonnegmalconv.py:1:1: 'os' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_nonnegmalconv.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_nonnegmalconv.py:5:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/chart/evasion_rate_of_attempts_nonnegmalconv.py:53:5: 'matplotlib' may be undefined, or defined from star imports: utils
+minimal-prototype/chart/evasion_rate_of_attempts_old.py:1:1: 'os' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_old.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/evasion_rate_of_attempts_old.py:5:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/chart/evasion_rate_of_attempts_old.py:5:1: 'utils.*' imported but unused
+minimal-prototype/chart/feature_combination.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/feature_combination.py:5:1: 'from feature_contribution import *' used; unable to detect undefined names
+minimal-prototype/chart/feature_combination.py:132:53: 'get_display_name' may be undefined, or defined from star imports: feature_contribution
+minimal-prototype/chart/feature_contribution.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/feature_contribution_heatmap.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/feature_contribution_heatmap.py:96:9: local variable 'listofTuples' is assigned to but never used
+minimal-prototype/chart/feature_contribution_heatmap.py:115:5: local variable 'value_array' is assigned to but never used
+minimal-prototype/chart/feature_contribution_heatmap.py:261:5: local variable 'texts' is assigned to but never used
+minimal-prototype/chart/plot_action_combination.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/plot_action_combination.py:5:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/chart/plot_action_combination.py:5:1: 'utils.*' imported but unused
+minimal-prototype/chart/plot_changed_bytes.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/plot_changed_bytes.py:5:1: 'from utils import *' used; unable to detect undefined names
+minimal-prototype/chart/plot_changed_bytes.py:5:1: 'utils.*' imported but unused
+minimal-prototype/chart/plot_feature_contribution_heatmap.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/plot_feature_contribution_heatmap.py:93:9: local variable 'listofTuples' is assigned to but never used
+minimal-prototype/chart/plot_feature_contribution_heatmap.py:112:5: local variable 'value_array' is assigned to but never used
+minimal-prototype/chart/plot_feature_contribution_heatmap.py:253:5: local variable 'texts' is assigned to but never used
+minimal-prototype/chart/transfer.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/verify.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/verify.py:3:1: 'numpy as np' imported but unused
+minimal-prototype/chart/verify.py:4:1: 'matplotlib.pyplot as plt' imported but unused
+minimal-prototype/chart/verify.py:6:1: 'from feature_contribution import *' used; unable to detect undefined names
+minimal-prototype/chart/verify.py:6:1: 'feature_contribution.*' imported but unused
+minimal-prototype/chart/verify.py:68:5: local variable 'dict_larger' is assigned to but never used
+minimal-prototype/chart/verify_using_clamav.py:2:1: 'datetime' imported but unused
+minimal-prototype/chart/verify_using_clamav.py:3:1: 'numpy as np' imported but unused
+minimal-prototype/chart/verify_using_clamav.py:4:1: 'matplotlib.pyplot as plt' imported but unused
+minimal-prototype/chart/verify_using_clamav.py:5:1: 'from feature_contribution import *' used; unable to detect undefined names
+minimal-prototype/chart/verify_using_clamav.py:5:1: 'feature_contribution.*' imported but unused
