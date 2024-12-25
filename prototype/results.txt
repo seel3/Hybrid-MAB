@@ -1,0 +1,19 @@
+## Configuration
+Benign Content  :   27167
+Algorithm Type  :   MAB
+Max Working     :   100
+Thompson Sample :   0
+Update Parent   :   1
+Max Pull        :   60
+Max Action      :   10
+
+## Results
+
+original-ember: [54477/60000 (90.80%)] skip: 0 evasive: 156/1000 (15.60%) minimal: 156
+minimized-ember:
+original-av:
+minimized-av:
+
+
+
+hybrid-mode: [56825/60000 (94.71%)] skip: 0 evasive: 87/1000 (8.70%) minimal: 87

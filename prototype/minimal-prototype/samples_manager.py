@@ -58,7 +58,6 @@ class SamplesManager:
         logger_rew.info('check whether classifier can detect the original samples...')
 
         for sample in self.list_sample:
-
             sample.copy_to_scan_folder(rewriter_scan_folder)
         logger_rew.info('copy finish')
         while(True):
@@ -99,7 +98,7 @@ class SamplesManager:
             sha256 = Utils.get_ori_name(sample.path)
             
             # check where the sample is and call the function with either av path or model path 
-            if any(sha256 in filename for filename in os.listdir(av_folder)):
+            if (basename(sample.current_exe_path) in filename for filename in os.listdir(av_folder)):
                 scan_status = sample.check_scan_status(av_folder) 
             else:
                 scan_status = sample.check_scan_status(rewriter_scan_folder)
@@ -138,6 +137,7 @@ class SamplesManager:
             sample.set_current_exe_path(sample.evasive_path)
 
             os.system('rm -f %s%s' %(rewriter_scan_folder, basename(sample.current_exe_path)))
+            
             sample.delete_tmp_files(rewriter_output_folder)
             sample.scan_status = SCAN_STATUS_DELETED        # for minimization
             sample.status = SAMPLE_STATUS_EVASIVE
