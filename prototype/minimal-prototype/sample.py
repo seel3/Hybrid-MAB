@@ -130,7 +130,7 @@ class Sample:
         # changed check from scan type to scan folder
         # if folder is not av, then it is a classifier folder 
         # if folder contains av, it was to be scanned by the av
-        if "av" not in scan_folder:
+        if "/av" not in scan_folder:
             scan_status = SCAN_STATUS_DELETED
             sha256 = basename(self.path)
             for file_path in glob.glob('%s%s*' %(scan_folder, sha256)):

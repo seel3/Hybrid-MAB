@@ -27,6 +27,8 @@ class Classifier:
             exit()
 
     def run(self):
+        """Main function of the classifier that scans minimizer and rewriter scan folder until exit sign is detected.
+        """
         while True:
             count = 0
             count_current = count
@@ -43,6 +45,15 @@ class Classifier:
                     exit()
     
     def evaluate(self, classifier_input):
+        """Evaluation function
+        Checks wether sample is malware or not
+
+        Args:
+            classifier_input (path): path to file that should be analyzed.
+
+        Returns:
+            int: Error Code
+        """
         # search for files in the input folder
         # add them to benign list if extension is .benign
         # else add them to list_file 
