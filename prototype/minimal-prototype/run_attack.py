@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     print('\n### Log can be found in the log/ folder ###\n')
     
-
+    # start classifier thread
     classifier = Classifier(Utils.get_classifier_name())
     classifier_thread = threading.Thread(target=classifier.run)
     print('start classifier...')
@@ -30,7 +30,7 @@ if __name__ == '__main__':
     
     
     
-
+    # start rewriter and minimizer threads
     rewriter_type = Utils.get_rewriter_type()
     if rewriter_type == 'MAB':
         rewriter = MABRewriter(bandit, samples_manager)

@@ -204,6 +204,11 @@ class Utils:
     def get_wait_time():
         return int(config['CLASSIFIER']['scan_folder_wait_time'])
     
+    def get_lower_bound():
+        return float(config['CLASSIFIER']['lower_bound'])
+    def get_upper_bound():
+        return float(config['CLASSIFIER']['upper_bound'])
+    
     def get_max_working_sample_count():
         return int(config['BANDIT']['max_working_sample_count'])
     
@@ -367,7 +372,5 @@ minimal_folder = Utils.get_minimal_folder()
 functional_folder = Utils.get_functional_folder()
 json_folder = Utils.get_save_json_folder()
 
-
-# 0.8336 is used in original paper as boundary
-model_upper_bound = 0.8336
-model_lower_bound = 0.8335
+model_upper_bound = Utils.get_upper_bound()
+model_lower_bound = Utils.get_lower_bound()
