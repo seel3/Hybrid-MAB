@@ -64,7 +64,6 @@ class SamplesManager:
             for sample in self.list_sample:
                 if sample.status == None:
                     scan_status = sample.check_scan_status(rewriter_scan_folder)
-
                     if scan_status == SCAN_STATUS_DELETED:
                         sample.status = SAMPLE_STATUS_PENDING
                     elif scan_status == SCAN_STATUS_PASS:
@@ -96,11 +95,13 @@ class SamplesManager:
         # get sha256 of all samples
         for sample in list_working:
             sha256 = Utils.get_ori_name(sample.path)
-            
+            # TODO: error might be here
             # check where the sample is and call the function with either av path or model path 
-            if (basename(sample.current_exe_path) in filename for filename in os.listdir(av_folder)):
+            if any(basename(sample.current_exe_path) in filename for filename in os.listdir(av_folder)):
+                # av
                 scan_status = sample.check_scan_status(av_folder) 
             else:
+                # model
                 scan_status = sample.check_scan_status(rewriter_scan_folder)
     
             if len(sample.list_applied_arm) > 0:

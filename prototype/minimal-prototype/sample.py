@@ -74,10 +74,6 @@ class Sample:
             self.inc_seq_cur_x()
 
     def delete_applied_arm(self):
-        # clean attributes
-        # self.copy_time = None       # need?
-        # selfNone.scan_status = None       # need?
-
         # clean arms
         for arm in self.list_applied_arm:
             del arm

@@ -367,5 +367,7 @@ minimal_folder = Utils.get_minimal_folder()
 functional_folder = Utils.get_functional_folder()
 json_folder = Utils.get_save_json_folder()
 
-model_upper_bound = 0.833
-model_lower_bound = 0.5
+
+# 0.8336 is used in original paper as boundary
+model_upper_bound = 0.8336
+model_lower_bound = 0.8335

@@ -17,6 +17,7 @@ To tackle this Problem the hybrid mode uses primarely the model to detect wether
 
 
 ## TODO
+* Check if Status is always set correctly for samples
 * Rewriter seems to work but minimizer does appareantly not work with av samples.
 * Thompson Sampling does not work and throws errors
 * AV querying could be done using AMSI instead of just dropping the files on disk. This could be achieved by a client/server architecture where the rewriter can query amsi directly and get immediate feedback about a sample
