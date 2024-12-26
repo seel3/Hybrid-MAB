@@ -12,7 +12,7 @@ for i in range(runs):
     start = time.time()
 
     # execute attack and end when done
-    os.system("python run_attack.py")
+    os.system("/usr/bin/python run_attack.py")
     # get stop time
     stop = time.time()
  
