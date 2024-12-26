@@ -1,12 +1,12 @@
-Ember:
+original-Ember:
 1: 688m 25.774s (homeserver CPU)
 2: 272m18.029s (gpu-server GPU)
 3: 278m3.196s (gpu-server GPU)
-4:
+4: 171m1.905s
 5:
 
 
-Malconv:
+original-Malconv:
 1: 1737m 31.217s (homeserver CPU)
 2: 78m19.748s (gpu-server GPU)
 3:
@@ -14,9 +14,21 @@ Malconv:
 5:
 
 
-Defender:
+original-Defender:
 1: 543m 29.950s (CPU + VM)
 2: 990m0.816s (gpuserver GPU + VM)
 3: 
 4:
 5:
+
+
+
+
+
+minimized-ember:
+1: 172m33.986s
+2: 175m51.530s
+
+
+
+hybrid-mode:

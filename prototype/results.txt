@@ -10,7 +10,8 @@ Max Action      :   10
 ## Results
 
 original-ember: [54477/60000 (90.80%)] skip: 0 evasive: 156/1000 (15.60%) minimal: 156
-minimized-ember:
+                [54363/60000 (90.61%)] skip: 0 evasive: 160/1000 (16.00%) minimal: 160
+minimized-ember: [54438/60000 (90.73%)] skip: 0 evasive: 166/1000 (16.60%) minimal: 165
 original-av:
 minimized-av:
 
