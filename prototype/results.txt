@@ -17,4 +17,4 @@ minimized-av:
 
 
 
-hybrid-mode: [56825/60000 (94.71%)] skip: 0 evasive: 87/1000 (8.70%) minimal: 87
+hybrid-mode: [55547/60000 (92.58%)] skip: 0 evasive: 128/1000 (12.80%) minimal: 128

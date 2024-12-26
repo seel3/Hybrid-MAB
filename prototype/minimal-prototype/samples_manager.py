@@ -15,16 +15,22 @@ class SamplesManager:
             sample_folder (path): Path to the folder containing the malwaresamples
             bandit (Bandit): A bandit object to manage the modification of the samples
         """
+        # folder where samples are stored
         self.sample_folder = sample_folder
+        # bandit object to manage the modification of the samples
         self.bandit = bandit
+        # set the samples manager of the bandit to this object
         self.bandit.samples_manager = self
+        # TODO: can this be removed since sandbox is not used?
         self.cuckoo = Cuckoo() if Utils.is_cuckoo_enable() else None
-        self.list_sample = []   # all samples
-
+        # list of all samples
+        self.list_sample = []
+        # set the limit of concurrent samples that will be modified
         self.sample_concurrent_limit = Utils.get_max_working_sample_count()
-
+        # get all samples from the sample folder and sort it
         list_file = glob.glob('%s*' %sample_folder)
         list_file.sort()
+        # create a sample object from each file and add it to the list of samples
         for x in list_file:
             sample = Sample(x)
             self.list_sample.append(sample)
