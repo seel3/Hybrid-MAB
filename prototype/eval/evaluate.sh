@@ -35,50 +35,85 @@ for ((i=1; i<=runs; i++)); do
 
     # Cleanup
     rm -rf data/share/av/*
+    rm -rf output/
 
 done
 
 # Print results to terminal
-echo "\n"
+echo "
+"
 echo "-----------------------------------------------"
 echo "-------------------DONE------------------------"
 echo "-----------------------------------------------"
-echo "\n"
+echo "
+"
 echo "Execution time per run:"
 printf "%s\n" "${total[@]}"
-echo "\n"
+echo "
+"
+
+# Average execution time
+sum_total=0
+for t in "${total[@]}"; do
+    sum_total=$((sum_total + t))
+done
+average_time=$(echo "scale=2; $sum_total / ${#total[@]}" | bc)
 echo "Average execution time:"
-average_time=$(awk "BEGIN {sum=0; for (i=0; i<${#total[@]}; i++) sum+=${total[i]}; print sum/${#total[@]}}")
 echo "$average_time"
-echo "\n"
+echo "
+"
+
+# Evasive samples
 echo "Evasive samples:"
 printf "%s\n" "${count_evasive[@]}"
-echo "\n"
+echo "
+"
+
+# Average evasive count
+sum_evasive=0
+for e in "${count_evasive[@]}"; do
+    sum_evasive=$((sum_evasive + e))
+done
+average_evasive=$(echo "scale=2; $sum_evasive / ${#count_evasive[@]}" | bc)
 echo "Average Evasive count:"
-average_evasive=$(awk "BEGIN {sum=0; for (i=0; i<${#count_evasive[@]}; i++) sum+=${count_evasive[i]}; print sum/${#count_evasive[@]}}")
 echo "$average_evasive"
-echo "\n"
+echo "
+"
+
+# Minimal samples
 echo "Minimal samples:"
 printf "%s\n" "${count_minimal[@]}"
-echo "\n"
+echo "
+"
+
+# Average minimal count
+sum_minimal=0
+for m in "${count_minimal[@]}"; do
+    sum_minimal=$((sum_minimal + m))
+done
+average_minimal=$(echo "scale=2; $sum_minimal / ${#count_minimal[@]}" | bc)
 echo "Average Minimal count:"
-average_minimal=$(awk "BEGIN {sum=0; for (i=0; i<${#count_minimal[@]}; i++) sum+=${count_minimal[i]}; print sum/${#count_minimal[@]}}")
 echo "$average_minimal"
+echo "
+"
 
 # Prepare detailed report
 helper=""
 for ((j=0; j<${#total[@]}; j++)); do
-    helper+="Run $((j+1)): ${total[j]} sec\n"
+    helper+="Run $((j+1)): ${total[j]} sec
+    "
 done
 
 helper2=""
 for ((j=0; j<${#count_evasive[@]}; j++)); do
-    helper2+="Run $((j+1)): ${count_evasive[j]} Evasive Samples\n"
+    helper2+="Run $((j+1)): ${count_evasive[j]} Evasive Samples
+    "
 done
 
 helper3=""
 for ((j=0; j<${#count_minimal[@]}; j++)); do
-    helper3+="Run $((j+1)): ${count_minimal[j]} Minimal Samples\n"
+    helper3+="Run $((j+1)): ${count_minimal[j]} Minimal Samples
+    "
 done
 
 # Write results to results.txt
