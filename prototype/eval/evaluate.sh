@@ -34,7 +34,7 @@ for ((i=1; i<=runs; i++)); do
     count_minimal+=("$minimal_count")
 
     # Cleanup
-    rm -rf data/share/av/
+    rm -rf data/share/av/*
 
 done
 
