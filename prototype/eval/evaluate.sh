@@ -35,7 +35,8 @@ for ((i=1; i<=runs; i++)); do
 
     # Cleanup
     rm -rf data/share/av/*
-    rm -rf output/
+    rm -rf output/minimal/*
+    rm -rf output/evasive/*
 
 done
 
