@@ -1,4 +1,4 @@
-# masterprojekt
+# Hybrid-MAB
 This is the github repo for masterproject "Machine Learning-Assisted Modification of PE
 Malware for Antivirus Evasion"
 
