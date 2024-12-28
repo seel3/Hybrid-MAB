@@ -26,8 +26,6 @@ class MalConvModel(object):
             thresh (float, optional): _description_. Defaults to 0.5.
             name (str, optional): _description_. Defaults to 'malconv'.
         """
-        # TODO make sure the model is loaded correctly to GPU
-        
         # Check if CUDA (GPU) is available
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -90,13 +88,12 @@ class EmberModel_2019(object):       # model in MLSEC 2019
             thresh (float, optional): Threshold for classification. Defaults to 0.8336.
             name (str, optional): name of the model. Defaults to 'ember'.
         """
-        # TODO: make sure this is run on the GPU
+        # check if CUDA (GPU) is available and run the model accordingly
         if torch.cuda.is_available() :
             self.model = lgb.Booster(model_file=model_path, params={'device': 'gpu'})
         else:
             self.model = lgb.Booster(model_file=model_path)
-        # load lightgbm model
-        #self.model = lgb.Booster(model_file=model_path)
+
         self.thresh = thresh
         self.__name__ = 'ember'
 
@@ -139,8 +136,9 @@ class ClamAV(object):
             print('clamav error')
             exit()
 
-
-# TODO: check if ember should be run like this
+# ----------------------------------------------
+# ------------ Other model versions ------------
+# ----------------------------------------------
 
 #class EmberModel_gym(object):      # model in gym-malware
 #    # ember_threshold = 0.8336 # resulting in 1% FPR

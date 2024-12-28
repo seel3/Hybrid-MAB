@@ -17,6 +17,11 @@ To tackle this Problem the Hybrid Mode uses primarely the model to detect wether
 
 
 ## TODO
+* create a stable environment that enables GPU usage
+    * save MAB-malware/models and MAB-malware/data somewhere it can be pulled from (github large files?) so no dependencies to MAB-Malware Docker Image exist any more
+    * create a requirements.txt that is not causing problems
+    * ensure that torch/lighbgm can use GPU
+    * rewrite Dockerfiule to use ubuntu/debian base image instad ob MAB-malware image
 * should a final scan using the av for a sample be done before it is minimized and should minimzation also be done only with the av?
 * Thompson Sampling does not work and throws errors
 * AV querying could be done using AMSI instead of just dropping the files on disk. This could be achieved by a client/server architecture where the rewriter can query amsi directly and get immediate feedback about a sample
