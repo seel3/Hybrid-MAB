@@ -7,7 +7,6 @@ from datetime import datetime
 import configparser
 import time
 import logging
-#from models import *
 import pexpect
 import random
 import sys

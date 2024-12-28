@@ -28,7 +28,7 @@ class Minimizer:
                 self.samples_manager.minimize_evasive_sample()
                 self.samples_manager.update_evasive_list()
                 
-                # TODO: no sanbox. Remove?
+                # TODO: no sandbox. Remove?
                 if Utils.is_cuckoo_enable():
                     self.samples_manager.update_minimal_list()
             # TODO: no sandbox, make condition shorter and only check for count_evasive == 0?

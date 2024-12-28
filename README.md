@@ -17,8 +17,8 @@ To tackle this Problem the Hybrid Mode uses primarely the model to detect wether
 
 
 ## TODO
+* Comment ARM.py
 * create a stable environment that enables GPU usage
-    * save MAB-malware/models and MAB-malware/data somewhere it can be pulled from (github large files?) so no dependencies to MAB-Malware Docker Image exist any more
     * create a requirements.txt that is not causing problems
     * ensure that torch/lighbgm can use GPU
     * rewrite Dockerfiule to use ubuntu/debian base image instad ob MAB-malware image

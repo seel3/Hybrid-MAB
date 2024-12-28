@@ -252,20 +252,25 @@ class SamplesManager:
 
 
     def update_evasive_list(self):
-      
+        """function to update the list of evasive samples
+        """
+        # get all evasive samples
         list_evasive = self.get_samples_with_status(SAMPLE_STATUS_EVASIVE)
 
+        # loop through all evasive samples
         for sample in list_evasive:
+            # if the sample has not been minimized yet
             if sample.scan_status == SCAN_STATUS_WAITING:
-
+                # check the status of the sample
                 sample.scan_status = sample.check_scan_status(minimizer_scan_folder)
-              
+                # if the sample has been deleted, the last removed modification made the sample non evasive. 
                 if sample.scan_status == SCAN_STATUS_DELETED:
                     logger_min.info('%s: [FAIL] %s' %(sample.sname, sample.current_exe_path))
                     if sample.seq_cur_y == 0:
+                        # add the removed arm to the usefil arm list
                         sample.list_useful_arm_idxs.append(sample.seq_cur_x)
                     sample.inc_seq_cur_y()
-
+                # if the sample has passed the scan, it is evasive even after removal of the last modification
                 elif sample.scan_status == SCAN_STATUS_PASS:
                     sample.latest_minimal_path = sample.current_exe_path
                     logger_min.info('%s: [SUCC] %s' %(sample.sname, sample.current_exe_path))
@@ -277,12 +282,14 @@ class SamplesManager:
 
                     # clean up scan_folder
                     os.system('rm -f %s/%s*' %(minimizer_scan_folder, basename(sample.path)))
-                  
+                    # update minimal arms
                     sample.list_minimal_arm = [ arm for arm in sample.current_applied_arm_subset if arm ]
                     sample.inc_seq_cur_x()
+            # if every modification has been checked for minimization
             if sample.seq_cur_x >= len(sample.list_applied_arm) or sample.status == SAMPLE_STATUS_MINIMAL:
+                # if the sample has been minimized
                 sample.status = SAMPLE_STATUS_MINIMAL
-
+                # update path of the sample and move it to the minimal folder
                 minimal_path = sample.get_minimal_file()
                 logger_min.info('%s: ###### [FINISH] %s' %(sample.sname, minimal_path))
                 os.system('cp -p %s %s' %(minimal_path, minimal_folder))
@@ -304,10 +311,14 @@ class SamplesManager:
                     if ori_arm.idx in [0, 1, 2, 3]:     # OA SA SR SP
                         self.bandit.add_new_arm(ori_arm)
 
-             
+                # clean up
                 sample.delete_tmp_files(minimizer_output_folder)
 
     def update_minimal_list(self):
+        """function to update the list of minimal samples
+        is only beeing called if cuckoo sandbox is enabled
+        TODO: can this function be removed?
+        """
         list_minimal = self.get_samples_with_status(SAMPLE_STATUS_MINIMAL)
         for sample in list_minimal:
             # if not submitted, submit, otherwise get existing task_id
@@ -316,7 +327,6 @@ class SamplesManager:
 
 
             cuckoo_status = self.cuckoo.get_task_status(task_id)
-
 
             if cuckoo_status == 'reported':
                 functional = self.cuckoo.is_functional(task_id, sample.path)
