@@ -1,0 +1,2 @@
+prototype/models/ember_2019/ember_model.txt filter=lfs diff=lfs merge=lfs -text
+prototype/models/malconv/malconv.checkpoint filter=lfs diff=lfs merge=lfs -text
