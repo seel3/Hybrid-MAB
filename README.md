@@ -17,7 +17,6 @@ To tackle this Problem the Hybrid Mode uses primarely the model to detect wether
 
 
 ## TODO
-* Comment arm.py
 * create a stable environment that enables GPU usage
     * add benign content from data to data folder of container
     * create a requirements.txt that is not causing problems
