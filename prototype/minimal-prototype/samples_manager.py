@@ -247,6 +247,7 @@ class SamplesManager:
                     
                     # scan the sample with the current modifications
                     # TODO: should this be done with the av or the model scanner?
+                    # sample.copy_to_scan_folder(av_folder)
                     sample.copy_to_scan_folder(minimizer_scan_folder)
 
 

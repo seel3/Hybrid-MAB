@@ -28,8 +28,8 @@ class Arm:
         self.description = self.action
 
     def pull(self, sample):
-        """function to pull the arm
-        currently only increments the pull count
+        """function to pull the arm and increase the pull count of the sample
+
 
         Args:
             sample (Sample): The sample to pull the arm on
@@ -39,12 +39,10 @@ class Arm:
         """
         logger_rew.info('pull Arm %s (%d)' %(self.description, self.idx))
         sample.pull_count += 1
-        # TODO: can this be removed? the function is not implemented
         return self.transfer(sample.current_exe_path, rewriter_output_folder)
-    
-    # TODO: can this be removed since it is not implemented?
+
     def transfer(self, input_path, output_folder=rewriter_output_folder, verbose=True):
-        """not implemented yet
+        """to be implemented by subclasses
 
         Args:
             input_path (_type_): _description_
@@ -52,16 +50,15 @@ class Arm:
             verbose (bool, optional): _description_. Defaults to True.
 
         Raises:
-            Exception: _description_
+            Exception: to be implemented by subclasses
         """
         raise Exception ('Not Implemented')
 
     def estimated_probas(self):
-        """not implemented yet
-        TODO: can this be removed?
+        """to be implemented by subclasses
 
         Raises:
-            NotImplementedError: _description_
+            NotImplementedError: to be implemented by subclasses
         """
         raise NotImplementedError
 

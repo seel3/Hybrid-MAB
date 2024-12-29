@@ -17,6 +17,7 @@ To tackle this Problem the Hybrid Mode uses primarely the model to detect wether
 
 
 ## TODO
+* Write Documentation in Prototype.md
 * create a stable environment that enables GPU usage
     * add benign content from data to data folder of container
     * create a requirements.txt that is not causing problems
