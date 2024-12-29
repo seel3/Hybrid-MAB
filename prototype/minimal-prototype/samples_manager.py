@@ -21,8 +21,7 @@ class SamplesManager:
         self.bandit = bandit
         # set the samples manager of the bandit to this object
         self.bandit.samples_manager = self
-        # TODO: can this be removed since sandbox is not used?
-        self.cuckoo = Cuckoo() if Utils.is_cuckoo_enable() else None
+
         # list of all samples
         self.list_sample = []
         # set the limit of concurrent samples that will be modified

@@ -27,44 +27,6 @@ class Bandit:
         self.used_once_only_arm_idxs = set()
         self.random_arm_count = 0
 
-
-    # TODO: only used for GP and MCTS, remove?
-    def get_random_arm(self, path):           # for GP and MCTS only, not for MAB
-        idx = None
-        if self.random_arm_count == 0:
-            cr_path = Utils.get_randomized_folder() + Utils.get_ori_name(path) + '.CR'
-            if os.path.exists(cr_path):
-                self.random_arm_count += 1
-                idx = 7
-        if not idx:
-            idx = random.randint(0, 6)
-        arm = copy.deepcopy(self.list_arm[idx])
-        self.random_arm_count += 1
-        return arm
-    
-    # TODO: only used for GP and MCTS, remove?
-    def get_random_arm_norepeat_onceonly(self, path): 
-        idx = None
-        if self.random_arm_count == 0:
-            cr_path = Utils.get_randomized_folder() + Utils.get_ori_name(path) + '.CR'
-            if os.path.exists(cr_path):
-                self.random_arm_count += 1
-                idx = 7
-        if not idx:
-            idx = random.randint(0, 6)
-            while idx in self.used_once_only_arm_idxs:
-
-                idx = random.randint(0, 6)
-
-        if idx in [4,5,6,7]:
-            self.used_once_only_arm_idxs.add(idx)
-
-        arm = copy.deepcopy(self.list_arm[idx])
-        self.random_arm_count += 1
-        return arm
-    
-    
-    
     
     def get_next_arm(self, sample, list_action, rand=False):
         """Function to get the next arm/modification to apply to the sample.

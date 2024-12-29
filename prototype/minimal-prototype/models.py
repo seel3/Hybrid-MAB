@@ -123,18 +123,6 @@ class EmberModel_2019(object):       # model in MLSEC 2019
         score = self.get_score(file_path)
         return score < self.thresh
 
-# TODO: remove? ClamAV is not used in the current implementation
-class ClamAV(object):
-    def is_evasive(self, file_path):
-        res = subprocess.run(['clamdscan', '--fdpass', file_path], stdout=subprocess.PIPE)
-        #print(res.stdout)
-        if 'FOUND' in str(res.stdout):
-            return False
-        elif 'OK' in str(res.stdout):
-            return True
-        else:
-            print('clamav error')
-            exit()
 
 # ----------------------------------------------
 # ------------ Other model versions ------------

@@ -89,7 +89,7 @@ class Sample:
         list_mic_action = ACTION_TO_MICROACTION[action]
 
         if self.seq_cur_x == -1:
-            if self.seq_cur_y == len(list_mic_action) - 1:          # TODO need test case
+            if self.seq_cur_y == len(list_mic_action) - 1:  
                 self.seq_cur_y = -1         # try the original last action
                 return
             if self.seq_cur_y == -1:
@@ -344,23 +344,6 @@ class Sample:
                     os.system('rm %s' %input_path)
                 input_path = output_path
                 self.set_current_exe_path(output_path)
-
-    # TODO: can this be removed? No GP will be done
-    def replay_trace(self, trace, output_folder=rewriter_output_folder):   # For GP Rewriter only
-        if len(trace) == 0:
-            print('empty replay subset')
-            logger_min.error('empty replay subset')
-            exit()
-        input_path = self.path
-        for arm in trace:
-            if arm:
-                output_path = arm.transfer(input_path, output_folder)
-                input_path = output_path
-                self.set_current_exe_path(output_path)
-            else:
-                self.set_current_exe_path(input_path)
-        return output_path
-
 
     def get_applied_actions(self):
         """function to get the names of the applied actions

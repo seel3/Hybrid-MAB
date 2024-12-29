@@ -72,7 +72,6 @@ class Classifier:
 
             score = self.model.get_score(file_path)
             
-            # TODO: read thresholds from config
             if score <= model_lower_bound: 
                 # malware is classified as benign with high confidence 
                 logger_cla.info('#### Benign! #### %s' %file_path)
@@ -80,7 +79,6 @@ class Classifier:
                 
             if  model_lower_bound < score < model_upper_bound:
                 # classifier is unsure if malware or benign
-                # TODO: check if this might be problem when called for minimizer
                 logger_cla.info('#### Unsure. Moving to AV! #### %s' %file_path)
                 os.system('mv %s data/share/av/%s' %(file_path, os.path.basename(file_path)))
             else:

@@ -123,14 +123,9 @@ class MABRewriter:
                     count_minimal + count_functional))
             logger_rew.info('-----------------------------------------------')
 
-            # TODO: remove cuckoo check
-            if Utils.is_cuckoo_enable():
-                if count_functional + count_skip == len(self.samples_manager.list_sample):
-                    break
-            else:
-                # if all samples are evasive or minimal break loop
-                if count_minimal + count_skip == len(self.samples_manager.list_sample):
-                    break
+            # if all samples are evasive or minimal break loop
+            if count_minimal + count_skip == len(self.samples_manager.list_sample):
+                break
 
         # wait for remaining working samples to be deleted or evade
         logger_rew.info('wait for remaining working samples')
@@ -139,19 +134,14 @@ class MABRewriter:
             count_working = self.samples_manager.get_count_with_status(SAMPLE_STATUS_WORKING)
             count_evasive = self.samples_manager.get_count_with_status(SAMPLE_STATUS_EVASIVE)
             count_minimal = self.samples_manager.get_count_with_status(SAMPLE_STATUS_MINIMAL)
-            
-            # TODO: remove cuckoo check
-            if Utils.is_cuckoo_enable():
-                if count_working + count_evasive + count_minimal == 0:
+       
+            # check if any samples are still beeing worked on
+            if self.rand == False:
+                if count_working + count_evasive == 0:
                     break
             else:
-                # check if any samples are still beeing worked on
-                if self.rand == False:
-                    if count_working + count_evasive == 0:
-                        break
-                else:
-                    if count_working == 0:
-                        break
+                if count_working == 0:
+                    break
             # update working list and wait 
             logger_rew.info('count_working: %d, count_evasive: %d, count_minimal: %d' %(count_working, count_evasive, count_minimal))
             self.samples_manager.update_working_list()
