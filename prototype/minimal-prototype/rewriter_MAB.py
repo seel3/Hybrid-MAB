@@ -18,36 +18,6 @@ class MABRewriter:
         self.samples_manager = samples_manager
         self.rand = rand
         
-    def run_once(self):
-        """run_once method
-        TODO: is this method used? Otherwise remove it
-        """
-        logger_rew.info('====================== %s =====================' %Utils.get_classifier_name())
-        for sample in self.samples_manager.list_sample:
-            md5 = sample.get_md5(sample.path)
-            print(sample.path, md5)
-            for arm in self.bandit.list_arm:
-                if arm.action == 'CR':
-                    continue
-                output_path = arm.pull(sample)
-                if os.path.exists(output_path):
-                    md5_arm = sample.get_md5(output_path)
-                    if md5 == md5_arm:
-                        print('same arm output. rm %s' %output_path)
-                        os.system('rm %s' %output_path)
-                with open(sample.path, 'rb') as fp:
-                    bytez = fp.read()
-                    bytez_new = modify_without_breaking(bytez, [ACTION_MAP[arm.action]])
-                    output_path_gym = output_path + '_gym'
-                    with open(output_path_gym, 'wb') as fp_out:
-                        fp_out.write(bytez_new)
-                        if os.path.exists(output_path_gym):
-                            md5_arm = sample.get_md5(output_path_gym)
-                            if md5 == md5_arm:
-                                print('same gym output. rm %s' %output_path_gym)
-                                os.system('rm %s' %output_path_gym)
-        print('rename \'s/\./\_/\' %s/*' %(dirname(output_path)))
-        os.system('rename \'s/\./\_/\' %s/*' %(dirname(output_path)))
 
     def run(self):
         """main method of rewriter
