@@ -2,6 +2,13 @@
 The goal of this project is to create evasive malware samples using the multi armed bandit approach proposed by [song et. al](https://github.com/bitsecurerlab/MAB-malware).
 
 ## Concept
+The prototype is following the concept of a Multi Armed Bandit. 
+
+The multi-armed bandit problem, a concept in probability theory and machine learning, involves a decision maker repeatedly selecting one of several fixed options (referred to as arms or actions) with only partial knowledge of their properties at the time of selection. Over time, the decision maker may gain a better understanding of these properties. A key feature of this problem is that choosing an arm does not alter its properties or those of the other arms.
+
+Examples of the multi-armed bandit problem include tasks that require iteratively distributing a fixed and limited set of resources among competing options to minimize regret. Another common variation of the problem is the "best arm identification" setup, where the objective is to determine the best option after a finite number of rounds.
+
+Possible modifications of malware are each seen as a unique slot machine associated with a certain reward which consits of how many times the machine was played, how many times the machine won and how many times the player played in total on all machines. Now the player wants to maximize his wins, within a certain number of plays. This tackles the classic exploration exploitation tradeoff where the player wants to try as many new machines as possible, to find new good plays, while also further exploiting the already discovered good machines. In order to evaluate the created malware samples, they have to be tested against the target AV. 
 
 
 ## Implementation
