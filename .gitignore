@@ -1,7 +1,8 @@
 minimal-prototype/models/**
 minimal-prototype/data/**
 
-
+prototype/data/
+prototype/models/
 
 models/ember_2019/ember_model.txt
 models/ember_2019/ember_model.txt.zip
