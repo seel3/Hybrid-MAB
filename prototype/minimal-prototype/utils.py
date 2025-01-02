@@ -7,7 +7,6 @@ from datetime import datetime
 import configparser
 import time
 import logging
-#from models import *
 import pexpect
 import random
 import sys
@@ -204,6 +203,11 @@ class Utils:
     def get_wait_time():
         return int(config['CLASSIFIER']['scan_folder_wait_time'])
     
+    def get_lower_bound():
+        return float(config['CLASSIFIER']['lower_bound'])
+    def get_upper_bound():
+        return float(config['CLASSIFIER']['upper_bound'])
+    
     def get_max_working_sample_count():
         return int(config['BANDIT']['max_working_sample_count'])
     
@@ -367,5 +371,5 @@ minimal_folder = Utils.get_minimal_folder()
 functional_folder = Utils.get_functional_folder()
 json_folder = Utils.get_save_json_folder()
 
-model_upper_bound = 0.833
-model_lower_bound = 0.5
+model_upper_bound = Utils.get_upper_bound()
+model_lower_bound = Utils.get_lower_bound()

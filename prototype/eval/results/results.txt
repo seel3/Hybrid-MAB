@@ -10,10 +10,11 @@ Max Action      :   10
 ## Results
 
 original-ember: [54477/60000 (90.80%)] skip: 0 evasive: 156/1000 (15.60%) minimal: 156
-minimized-ember:
+                [54363/60000 (90.61%)] skip: 0 evasive: 160/1000 (16.00%) minimal: 160
+minimized-ember: [54438/60000 (90.73%)] skip: 0 evasive: 166/1000 (16.60%) minimal: 165
 original-av:
 minimized-av:
 
 
 
-hybrid-mode: [56825/60000 (94.71%)] skip: 0 evasive: 87/1000 (8.70%) minimal: 87
+hybrid-mode: [55547/60000 (92.58%)] skip: 0 evasive: 128/1000 (12.80%) minimal: 128

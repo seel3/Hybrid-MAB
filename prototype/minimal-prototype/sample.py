@@ -5,33 +5,52 @@ from arm import *
 from pathlib import Path
 
 class Sample:
+    """class that represents a malware sample
+    """
     def __init__(self, path):
+        """init function for Sample class
+
+        Args:
+            path (path): Path to the sample
+        """
+        # path to the original sample
         self.path = path
+        # path to the location of the current sample/latest modified sample
         self.current_exe_path = path
+        # short name (first 8 chars from sample name) of the sample
         self.sname = Utils.short_name(self.path)
+        # max length from bandit config
         self.max_length = Utils.get_max_length()
+        # time sample was last copied
         self.copy_time = None
         # queue types of which the sample is in. option: [None/pending/working/evasive/minimal/functional]
         self.status = None
-        self.scan_status = None   # file status on classifier
-        #self.broken_action_idxs = set()
-
+        # file status on the classifier option: [None/SCAN_STATUS_DELETED/SCAN_STATUS_PASS/SCAN_STATUS_WAITING/SCAN_STATUS_OVERTIME/SCAN_STATUS_MD5_CHANGED]
+        self.scan_status = None  
+        # list of applied modifications
         self.list_applied_arm = []
+        # list of useful arm indexes
         self.list_useful_arm_idxs = []
-
+        # 
         self.current_applied_arm_subset = []
+        #
         self.seq_cur_x = -1
+        #
         self.seq_cur_y = 0
+        #
         self.seq_cur_x_to_kept_arm = {}
+        # list of minimal arms
         self.list_minimal_arm = []
+        # path to the latest minimal sample
         self.latest_minimal_path = None
-
+        # path to the evasive sample
         self.evasive_path = None
-        #self.current_exe_md5 = Utils.get_md5(path)
-        
+        # number of times the sample had an arm pulled/was modified
         self.pull_count = 0
 
     def reset(self):
+        """function to reset all the attributes of the sample
+        """
         self.current_exe_path = self.path
         self.copy_time = None
         self.status = None
@@ -49,20 +68,28 @@ class Sample:
 
 
     def set_current_exe_path(self, path):
+        """setter to set the current_exe_path attribute
+
+        Args:
+            path (path): The path the latest version of the sample is currently at
+        """
         self.current_exe_path = path
-        #self.current_exe_md5 = Utils.get_md5(path)
-        #logger_rew.info('set %s md5 %s' %(path, self.current_exe_md5))
+
 
     def inc_seq_cur_x(self):
+        """TODO: comment
+        """
         self.seq_cur_x += 1
         self.seq_cur_y = 0
 
     def inc_seq_cur_y(self):
+        """TODO: comment
+        """
         action = self.list_applied_arm[self.seq_cur_x].action
         list_mic_action = ACTION_TO_MICROACTION[action]
 
         if self.seq_cur_x == -1:
-            if self.seq_cur_y == len(list_mic_action) - 1:          # TODO need test case
+            if self.seq_cur_y == len(list_mic_action) - 1:  
                 self.seq_cur_y = -1         # try the original last action
                 return
             if self.seq_cur_y == -1:
@@ -74,42 +101,72 @@ class Sample:
             self.inc_seq_cur_x()
 
     def delete_applied_arm(self):
-        # clean attributes
-        # self.copy_time = None       # need?
-        # selfNone.scan_status = None       # need?
-
-        # clean arms
+        """function to delete all the applied arms
+        """
         for arm in self.list_applied_arm:
             del arm
         self.list_applied_arm = []
 
     def delete_tmp_files(self, folder):
+        """function to delete the generated tmp files in the folder
+
+        Args:
+            folder (path): Path to the folder to delete the files from
+        """
         logger_rew.info('delete generated tmp files in %s' % folder)
         os.system('rm -f %s/%s.*' % (folder, basename(self.path)))
-        #self.set_current_exe_path(self.path)
 
     def delete_files_except_current_exe(self, folder):
+        """function to delete all the files in the folder except the latest version of the sample
+
+        Args:
+            folder (path): Path to the folder to delete the files from
+        """
+        # sha256 is the name of the file
         sha256 = basename(self.path)
-        #list_file = [x for x in glob.glob('%s%s*' %(folder, sha256))]
+        # get a list of all files in the folder that have the sha256 in their name
         list_file = [folder + x for x in os.listdir(folder) if sha256 in x]
+        # sort the list of files by the time they were last modified
         list_sorted = sorted(list_file, key=os.path.getmtime)
+        # delete all the files in the list except the latest one
         for x in list_sorted[:-1]:
             if x != self.current_exe_path:
                 os.system('rm -f %s' %x)
         
     def append_arm(self, arm):
+        """function to append an arm to the list of applied arms
+
+        Args:
+            arm (Arm): The arm to append
+        """
         self.list_applied_arm.append(arm)
 
     def copy_to_scan_folder(self, scan_folder):
+        """function to copy a sample to the scan folder
+
+        Args:
+            scan_folder (path): Path to the scan folder
+        """
+        # set the scan status to waiting
         self.scan_status = SCAN_STATUS_WAITING
+        # set the copy time to the current time
         self.copy_time = time.time()
+        # copy the sample to the scan folder
         Utils.safe_copy(self.current_exe_path, scan_folder + basename(self.current_exe_path))
 
 
     def is_remain_after_threshold_time(self):
+        """function to check if a sample is still existent after the threshold time
+
+        Returns:
+            Boolean: True if the sample is still existent after the threshold time, False otherwise
+        """
+        # get the wait time from the config
         wait_time = Utils.get_wait_time()
+        # get how long the sample already exists
         existing_time = time.time() - self.copy_time
         #logger_rew.info('existing_time: %d/%d' %(existing_time, wait_time))
+        # check if threshold time has passed
         if existing_time > wait_time:
             return True
         else:
@@ -125,32 +182,38 @@ class Sample:
         Returns:
             int: scan status of the sample
         """
+        # wait for the stop sign to be removed
         Utils.wait_on_stop_sign()
         
-        # changed check from scan type to scan folder
-        # if folder is not av, then it is a classifier folder 
-        # if folder contains av, it was to be scanned by the av
+        # check if the sample is in the scan folder of the av or the model
         if "/av" not in scan_folder:
+            # model scan
+            # set the scan status to deleted
             scan_status = SCAN_STATUS_DELETED
+            # get the filename of the sample
             sha256 = basename(self.path)
+            # get all versions of the sample from the scan folder
             for file_path in glob.glob('%s%s*' %(scan_folder, sha256)):
+                # check if the sample is benign and set the scan status accordingly
                 if '.benign' in file_path:
                     scan_status = SCAN_STATUS_PASS
                 else:
                     scan_status = SCAN_STATUS_WAITING
                 break
+            # if the sample has the status pass, delete all versions of the sample
             if scan_status in [SCAN_STATUS_PASS]:
                 os.system('rm -f %s/*%s*' %(scan_folder, basename(self.path)))
             return scan_status
         else:
             # av scan
             sha256 = basename(self.path)
-            # added av subpath to scan folder
+            # Get all versions of the sample from the scan folder
             list_file = glob.glob('%s%s*' %((scan_folder), sha256))
-            
+            # check if file has been removed by av and set the scan status accordingly
             if len(list_file) == 0:
                 scan_status = SCAN_STATUS_DELETED
             else:
+                # check if the threshold time has already passed
                 if self.is_remain_after_threshold_time():
                     scan_status = SCAN_STATUS_PASS
                 else:
@@ -158,6 +221,11 @@ class Sample:
         return scan_status
 
     def prepare_action_subset(self):
+        """TODO: comment
+
+        Returns:
+            _type_: _description_
+        """
         if self.seq_cur_x == -1:        # Quick minimzier
             if self.seq_cur_y == 0:
                 self.seq_cur_y = 1     # skip the first ''                         # TODO need test case
@@ -215,11 +283,20 @@ class Sample:
                 self.sname, minimal_action))
             exit()
         list_arm[self.seq_cur_x] = minimal_arm
-        #logger_min.info('%s: next try arms:\t%s (%d %d)' %(self.sname, self.get_names_from_arm_list(list_arm), self.seq_cur_x, self.seq_cur_y))
+
         self.current_applied_arm_subset = list_arm
 
     def get_names_from_arm_list(self, list_arm):
+        """get the names of the actions from a list of arms
+
+        Args:
+            list_arm (list): list of arms
+
+        Returns:
+            list: list of names of the actions
+        """
         list_arm_name = []
+        # for each arm in the list get the name of the action and append it to the name list
         for x in list_arm:
             if x:
                 list_arm_name.append(x.action)
@@ -228,21 +305,34 @@ class Sample:
         return list_arm_name
 
     def get_minimal_file(self):
-        if self.latest_minimal_path:                # minimal sample
-            #logger_min.info('%s: latest_minimal_path %s' %(self.sname, self.latest_minimal_path))
+        """Function to get the minimal file
+
+        Returns:
+            path: Path to the minimal sample
+        """
+        # if minimal_path has been set a minimized sample exists
+        if self.latest_minimal_path:
+            # set the minimal path to the latest minimal path
             minimal_path = self.latest_minimal_path
-        else:                                           # cannot be minimized
-            #list_file = [x for x in os.listdir(evasive_folder) if basename(self.path) in x]
+        
+        # sample can not be minimized -> evasive sample is already minimal
+        else:
+            # get the sha256 of the sample
             sha256 = basename(self.path)
+            # get a list of all versions of the sample from the evasive folder
             list_file = glob.glob('%s%s*' %(evasive_folder, sha256))
+            # no evasive sample found == something went wrong -> End Program
             if len(list_file) == 0:
                 logger_min.error('cannot find original evasive sample')
                 exit()
+            # set the minimal path to the first evasive sample found
             minimal_path = list_file[0]
-            #logger_min.info('%s: cannot be minimized' %(self.sname))
+
         return minimal_path
 
     def replay_action_subset(self):     # For MAB Rewriter
+        """TODO: comment
+        """
         if len(self.current_applied_arm_subset) == 0:
             logger_min.error('empty replay subset')
             exit()
@@ -254,25 +344,11 @@ class Sample:
                     os.system('rm %s' %input_path)
                 input_path = output_path
                 self.set_current_exe_path(output_path)
-            ########### else:
-            ###########     self.set_current_exe_path(input_path)
-        #logger_rew.info('output_path: %s' %output_path)
-
-    def replay_trace(self, trace, output_folder=rewriter_output_folder):   # For GP Rewriter only
-        if len(trace) == 0:
-            print('empty replay subset')
-            logger_min.error('empty replay subset')
-            exit()
-        input_path = self.path
-        for arm in trace:
-            if arm:
-                output_path = arm.transfer(input_path, output_folder)
-                input_path = output_path
-                self.set_current_exe_path(output_path)
-            else:
-                self.set_current_exe_path(input_path)
-        return output_path
-        #logger_rew.info('output_path: %s' %output_path)
 
     def get_applied_actions(self):
+        """function to get the names of the applied actions
+
+        Returns:
+            String: name of the applied actions
+        """
         return self.get_names_from_arm_list(self.list_applied_arm)
