@@ -1,3 +1,6 @@
+
+On Thompson Sampling the following error occurrs:
+
 ### [3171/44580 (7.11%)] skip: 257 evasive: 67/743 (9.02%) minimal: 57
 -----------------------------------------------
 select pending sample: 585bfc41 (pull_count:5)
@@ -89,7 +92,8 @@ delete generated tmp files in output/minimizer_output/
 
 
 
-
+Sometimes this also ocurrs during UCB.
+In that case the prototype is stuck in an endless loop while updating the same alpha/betha values.
 
 
 

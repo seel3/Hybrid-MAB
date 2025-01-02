@@ -17,7 +17,6 @@ To tackle this Problem the Hybrid Mode uses primarely the model to detect wether
 
 
 ## TODO
-* Write Documentation in Prototype.md
 * create a stable environment that enables GPU usage
     * add benign content from data to data folder of container
     * create a requirements.txt that is not causing problems
@@ -26,6 +25,7 @@ To tackle this Problem the Hybrid Mode uses primarely the model to detect wether
 * should a final scan using the av for a sample be done before it is minimized and should minimzation also be done only with the av?
     * It could be sufficient to make the minimizer scans av only and not hybrid. 
 * Thompson Sampling does not work and throws errors
+    * This sometimes also applies to UCB. Here the reward propagation is just stuck in an endless loop.
 * AV querying could be done using AMSI instead of just dropping the files on disk. This could be achieved by a client/server architecture where the rewriter can query amsi directly and get immediate feedback about a sample. 
 * Check if parameters can be optimized (max concurrent samples etc.) to optimize performance or evasion rate
 * evaluate ember vs. AV vs. hybrid mode
