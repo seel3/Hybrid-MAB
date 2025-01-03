@@ -13,9 +13,6 @@
 #lief
 #scikit-learn
 
-
-
-
 certifi==2024.12.14
 charset-normalizer==3.4.1
 ember @ git+https://github.com/elastic/ember.git

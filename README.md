@@ -18,6 +18,7 @@ To tackle this Problem the Hybrid Mode uses primarely the model to detect wether
 
 ## TODO
 * create a stable environment that enables GPU usage
+    * Retrain Ember with lief 12.3
     * add benign content from data to data folder of container
     * create a requirements.txt that is not causing problems
     * ensure that torch/lighbgm can use GPU
