@@ -1,15 +1,13 @@
-FROM nvidia/cuda:12.6.3-base-ubuntu20.04
-
-# copy prototype to the container
+FROM wsong008/mab-malware
+# copy the prototype to the container including the evaluation script
 COPY minimal-prototype/ /root/minimal-prototype/
+COPY eval/evaluate.py /root/minimal-prototype/evaluate.py
 COPY eval/evaluate.sh /root/minimal-prototype/evaluate.sh
+#COPY models/ /root/minimal-prototype/models/
 
-# copy models to the container
-COPY models/ /root/minimal-prototype/models/
+# copy data from original to the prototype
+RUN cp -r /root/MAB-malware/data /root/minimal-prototype/data
+RUN cp -r /root/MAB-malware/models /root/minimal-prototype/models
 
-# copy malware data to the container
-COPY data/ /root/minimal-prototype/data/
-
-# set up requirements
-RUN apt update && apt upgrade -y && apt install -y python3 python3-pip bc vim git
-RUN python3 -m pip install -r /root/minimal-prototype/requirements.txt
+# install bc for evaluation script
+RUN apt install bc -y
