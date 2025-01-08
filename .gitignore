@@ -1,14 +1,6 @@
-prototype/minimal-prototype/models/**
-prototype/minimal-prototype/data/benign_section_content/**
-prototype/minimal-prototype/data/malware/**
-prototype/minimal-prototype/data/malware.CR/**
-prototype/minimal-prototype/data/share/minimizer/**
-prototype/minimal-prototype/data/share/rewriter/**
-prototype/minimal-prototype/data/share/tmp/**
 
-models/ember_2019/ember_model.txt
-models/ember_2019/ember_model.txt.zip
-models/malconv/malconv.checkpoint
+prototype/data/
+prototype/models/
 
 mabmalwarevenv/**
 

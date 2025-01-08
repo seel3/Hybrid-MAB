@@ -1,0 +1,38 @@
+[LightGBM] [Warning] Ignoring unrecognized parameter 'max_conflict_rate' found in model string.
+[LightGBM] [Warning] Ignoring unrecognized parameter 'sparse_threshold' found in model string.
+[LightGBM] [Warning] Ignoring unrecognized parameter 'enable_load_from_binary_file' found in model string.
+[LightGBM] [Warning] Ignoring unrecognized parameter 'max_position' found in model string.
+start classifier...
+start rewriter...
+check whether classifier can detect the original samples...
+start minimizer...
+WARNING: EMBER feature version 2 were computed using lief version 0.9.0-
+WARNING:   lief version 0.12.3-39115d10 found instead. There may be slight inconsistencies
+WARNING:   in the feature calculations.
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/root/minimal-prototype/classifier.py", line 41, in run
+    res2 = self.evaluate(rewriter_scan_folder)
+  File "/root/minimal-prototype/classifier.py", line 73, in evaluate
+    score = self.model.get_score(file_path)
+  File "/root/minimal-prototype/models.py", line 111, in get_score
+    score = predict_sample(self.model, bytez)
+  File "/usr/local/lib/python3.8/dist-packages/ember/__init__.py", line 232, in predict_sample
+    features = np.array(extractor.feature_vector(file_data), dtype=np.float32)
+  File "/usr/local/lib/python3.8/dist-packages/ember/features.py", line 556, in feature_vector
+    return self.process_raw_features(self.raw_features(bytez))
+  File "/usr/local/lib/python3.8/dist-packages/ember/features.py", line 548, in raw_features
+    features.update({fe.name: fe.raw_features(bytez, lief_binary) for fe in self.features})
+  File "/usr/local/lib/python3.8/dist-packages/ember/features.py", line 548, in <dictcomp>
+    features.update({fe.name: fe.raw_features(bytez, lief_binary) for fe in self.features})
+  File "/usr/local/lib/python3.8/dist-packages/ember/features.py", line 100, in raw_features
+    output = np.zeros((16, 16), dtype=np.int)
+  File "/usr/local/lib/python3.8/dist-packages/numpy/__init__.py", line 305, in __getattr__
+    raise AttributeError(__former_attrs__[attr])
+AttributeError: module 'numpy' has no attribute 'int'.
+`np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
