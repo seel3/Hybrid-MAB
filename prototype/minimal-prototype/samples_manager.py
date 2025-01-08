@@ -245,7 +245,7 @@ class SamplesManager:
                     logger_min.info('%s: %s (%d, %d) %s' %(sample.sname, ori_arm_names, sample.seq_cur_x, sample.seq_cur_y, cur_arm_names))
                     
                     # scan the sample with the current modifications
-                    # TODO: should this be done with the av or the model scanner?
+                    # TODO: should this be done with the av only or the hybrid approach?
                     # sample.copy_to_scan_folder(av_folder)
                     sample.copy_to_scan_folder(minimizer_scan_folder)
 
@@ -262,6 +262,8 @@ class SamplesManager:
             # if the sample has not been minimized yet
             if sample.scan_status == SCAN_STATUS_WAITING:
                 # check the status of the sample
+                # TODO: Same as above/Part of the Problem above. Should this be done with the av only or the hybrid approach?
+                #sample.scan_status = sample.check_scan_status(av_folder)
                 sample.scan_status = sample.check_scan_status(minimizer_scan_folder)
                 # if the sample has been deleted, the last removed modification made the sample non evasive. 
                 if sample.scan_status == SCAN_STATUS_DELETED:
