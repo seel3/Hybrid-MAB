@@ -12,6 +12,13 @@ RUN cp -r /root/MAB-malware/models /root/minimal-prototype/models
 # install bc for evaluation script
 RUN apt install bc -y
 
+
+
+
 # upgrade environment so gpu support is added
 #RUN pip install --upgrade pip
 #RUN pip install --upgrade torch torchvision torchaudio
+
+# or: 
+# pip uninstall torch torchvision torchaudio
+# pip install --index-url https://download.pytorch.org/whl/cu124 torch torchvision torchaudio

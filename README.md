@@ -50,6 +50,21 @@ To tackle this Problem the Hybrid Mode uses primarely the model to detect wether
             
             Könnte dazu führen dass zwar der minimierungsprozess langsamer wird aber dafür kann es keine false negatives geben.
 
+
+
+
+* Defender höhere Priorität geben
+* AMSI agent implementieren.
+* Unterschiedliche evaluierungen heausfinden
+* Stichproben machen und funktionalität überprüfern (10-20 samples) (ganz wichtig!!!)
+    * sollte da was nicht funktionieren meeting ausmachen 
+
+* Pytorch: 
+```
+pip3 install --index-url https://download.pytorch.org/whl/cu124 torch torchvision torchaudio
+```
+
+
 ## TODO
 * create a stable environment that enables GPU usage (base on MAB container or start from scratch?)
     * Retrain Ember with lief 12.3 or only update torch in the original container, so it can use the gpu?
