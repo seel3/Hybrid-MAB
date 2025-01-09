@@ -57,12 +57,8 @@ To tackle this Problem the Hybrid Mode uses primarely the model to detect wether
 * AMSI agent implementieren.
 * Unterschiedliche evaluierungen heausfinden
 * Stichproben machen und funktionalität überprüfern (10-20 samples) (ganz wichtig!!!)
-    * sollte da was nicht funktionieren meeting ausmachen 
+    * sollte da was nicht funktionieren Meeting ausmachen 
 
-* Pytorch: 
-```
-pip3 install --index-url https://download.pytorch.org/whl/cu124 torch torchvision torchaudio
-```
 
 
 ## TODO
