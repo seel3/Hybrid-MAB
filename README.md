@@ -19,40 +19,6 @@ To tackle this Problem the Hybrid Mode uses primarely the model to detect wether
 
 
 ## Meeting 09.01.2025
-* Prototyp funktioniert
-    * Kurze Erklärung/Vorführung
-    * Zeitstand bei 300 Stunden
-* Dokumentation ist vollständig
-    * Code ist ausführlich kommentiert
-    * Erklärung der Oberflächlichen Fnktionsweise in Documentation/Prototype
-    * Erklärung der Infrastruktur unter Documentation/Infrastructure
-    * Bereits bekannte Overview in State of the Art.pdf
-* Was soll bis zur Abgabe noch gemacht werden/Soll überhaupt noch was gemacht werden?
-* Todos aus meiner Sicht welche in der Zeit machbar wären:
-    * Erstellen eines eigenständigen Docker images und hochladen auf Dockerhub
-        * Modelle und Malware Samples aktuell nur in MAB-malware image. WEnn image weg dann alles weg
-        * GPU support funktioniert nicht in Mab-malware image aufgrund falscher libraries -> fix in eigenem Image
-    * Finden einer guten Konfiguration aller Parameter:
-        * Thresholds sollten so gesetzt werden, dass Anzahl von minimalen Samples ca. gleich ist wie bei AV (aber performance sollte um einiges besser sein)
-        * Anschließend können parameter wie scan time, Epochen usw abgeändert werden um Anzahl von minimalen Samples zu erhöhen
-    * Besprechen der TODO's im Code
-        * Thompson Sampling funktioniert immer noch nicht. (Fehlerhafte Implementierung?) 
-            
-            Unwahrscheinlich dass das in restlicher Zeit zu fixen ist. 
-            
-            Problem tritt teils auch in UCB auf, hier kommt es zu einem endlos loop.
-
-            Problem könnte die scan_folder_time sein. (Zu niedrig? -> AV löscht sample nachdem es in sample manager bereits als evasive geführt wurde?)
-
-            Funktioniert aber auch ohne sehr gut und kann in config deaktiviert werden.
-
-        * In der minimierungs prozedur(sprich nach erfolgreicher evasiveness): sollte hier nur mehr mit der av gearbeitet werden oder weiterhin hybrid? Grundsätzlich will ich ja dass das ganze gegen die AV minimieren. 
-            
-            Könnte dazu führen dass zwar der minimierungsprozess langsamer wird aber dafür kann es keine false negatives geben.
-
-
-
-
 * Defender höhere Priorität geben
 * AMSI agent implementieren.
 * Unterschiedliche evaluierungen heausfinden
