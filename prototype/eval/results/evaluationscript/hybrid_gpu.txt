@@ -1,0 +1,72 @@
+
+scan_folder_wait_time = 600
+upper_bound = 0.8336
+lower_bound = 0.7
+max_working_sample_count = 100
+max_pull = 60
+max_length = 10
+smallest_section_size = 512
+largest_section_size = 10485760
+thompson_sampling = 0
+update_parent = 1
+
+
+
+
+
+
+Average execution time:
+10710.30
+
+Average evasive count:
+161.10
+
+Average minimal count:
+161.10
+
+
+
+Individual execution time: 
+------------------------------------------------
+Run 1: 10681 sec
+    Run 2: 10747 sec
+    Run 3: 10731 sec
+    Run 4: 10818 sec
+    Run 5: 10627 sec
+    Run 6: 10766 sec
+    Run 7: 10659 sec
+    Run 8: 10671 sec
+    Run 9: 10621 sec
+    Run 10: 10782 sec
+    
+
+
+
+Individual evasive count: 
+------------------------------------------------
+Run 1: 159 Evasive Samples
+    Run 2: 153 Evasive Samples
+    Run 3: 168 Evasive Samples
+    Run 4: 155 Evasive Samples
+    Run 5: 188 Evasive Samples
+    Run 6: 141 Evasive Samples
+    Run 7: 161 Evasive Samples
+    Run 8: 172 Evasive Samples
+    Run 9: 165 Evasive Samples
+    Run 10: 149 Evasive Samples
+    
+
+
+
+Individual minimal count: 
+------------------------------------------------
+Run 1: 159 Minimal Samples
+    Run 2: 153 Minimal Samples
+    Run 3: 168 Minimal Samples
+    Run 4: 155 Minimal Samples
+    Run 5: 188 Minimal Samples
+    Run 6: 141 Minimal Samples
+    Run 7: 161 Minimal Samples
+    Run 8: 172 Minimal Samples
+    Run 9: 165 Minimal Samples
+    Run 10: 149 Minimal Samples
