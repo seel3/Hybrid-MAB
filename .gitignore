@@ -2,6 +2,9 @@
 prototype/data/
 prototype/models/
 
+prototype/eval/minimal-samples/
+prototype/eval/evasive-samples/
+
 mabmalwarevenv/**
 
 playground/**
