@@ -2,8 +2,8 @@
 prototype/data/
 prototype/models/
 
-prototype/eval/minimal-samples/
-prototype/eval/evasive-samples/
+prototype/eval/minimal_samples/
+prototype/eval/evasive_samples/
 
 mabmalwarevenv/**
 
