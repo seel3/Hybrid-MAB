@@ -25,8 +25,20 @@ d9d9ac0fd2d3f36af73577bcc132e265d119e1d0f817e82582f2351e000edacf | https://app.a
 d9ee8f9536728a926f372eee3635cb77450957c1e44fbafc9c079f8b2e7bf69e | https://app.any.run/tasks/8f0f0a00-b84d-48cd-8337-265d6e1c664f | https://app.any.run/tasks/f81206d0-486b-4954-aed2-edadf63cd98e | SP SR BC OA | minimal | mod
 
 
-
-
+## Broken Samples
 047f4d6df2a902c614d9dbee8840aa24f75f36bc0ac584f6079962d8e5837676:
 
-Error Meldung: "Installer integrity failed". Integrity check on malware is impossible to circumvent. Might be to safeguard against modifications like breakpoints etc. or sandbox evasion
+![alt text](image.png)
+
+
+cb303cd5e0e521d0f9e43ab8df06fdba2f686e608432418b3724cb001f8cd096
+
+![alt text](image-1.png)
+
+
+
+Both samples are cerber ransomware which was built with nsis (https://nsis.sourceforge.io/Main_Page).
+This software for creating windows installers has a feature which prevents broken installers from executing.
+The feature is called installer self-verification and uses a CRC32 checksum which was most likely broken during the OA operation.
+![alt text](image-2.png)
+
