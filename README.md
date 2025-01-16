@@ -19,22 +19,17 @@ To tackle this Problem the Hybrid Mode uses primarely the model to detect wether
 
 
 ## Meeting 09.01.2025
-* Defender höhere Priorität geben
+* Defender höhere Priorität geben um Tompson Sampling zu fixen
 * AMSI agent implementieren.
 * Unterschiedliche evaluierungen heausfinden
-* Stichproben machen und funktionalität überprüfern (10-20 samples) (ganz wichtig!!!)
-    * sollte da was nicht funktionieren Meeting ausmachen 
+
 
 
 
 ## TODO
 * create a stable environment that enables GPU usage (base on MAB container or start from scratch?)
-    * Retrain Ember with lief 12.3 or only update torch in the original container, so it can use the gpu?
-        * Retraining ember could be complicated because i don't have the original samples. Lief version is therefore a Problem.
-        * Updating torch to enable GPU support works fine so far
     * add benign content from data to data folder of container
     * create a requirements.txt that is not causing problems
-    * ensure that torch/lighbgm can use GPU
     * rewrite Dockerfile to use ubuntu/debian base image instad ob MAB-malware image
 * should a final scan using the av for a sample be done before it is minimized and should minimzation also be done only with the av?
     * It could be sufficient to make the minimizer scans av only and not hybrid. 
@@ -45,4 +40,3 @@ To tackle this Problem the Hybrid Mode uses primarely the model to detect wether
         * Maybe scan time is too low/high?
 * AV querying could be done using AMSI instead of just dropping the files on disk. This could be achieved by a client/server architecture where the rewriter can query amsi directly and get immediate feedback about a sample. 
 * Check if parameters can be optimized (max concurrent samples etc.) to optimize performance or evasion rate
-* evaluate ember vs. AV vs. hybrid mode
