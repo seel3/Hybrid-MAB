@@ -1,15 +1,15 @@
 FROM ubuntu:latest
 
 # copy prototype to the container
-COPY minimal-prototype/ /root/minimal-prototype/
-COPY eval/evaluate.sh /root/minimal-prototype/evaluate.sh
+COPY minimal-prototype/ /root/Hybrid-MAB/
+COPY eval/evaluate.sh /root/Hybrid-MAB/evaluate.sh
 
 # copy models to the container
-COPY models/ /root/minimal-prototype/models/
+COPY models/ /root/Hybrid-MAB/models/
 
 # copy malware data to the container
-COPY data/ /root/minimal-prototype/data/
+COPY data/ /root/Hybrid-MAB/data/
 
 # set up requirements
 RUN apt update && apt upgrade -y && apt install -y python3 python3-pip bc vim git
-RUN python3 -m pip install -r /root/minimal-prototype/requirements.txt
+RUN python3 -m pip install -r /root/Hybrid-MAB/requirements.txt
