@@ -1,17 +1,15 @@
-FROM wsong008/mab-malware
-# copy the prototype to the container including the evaluation script
+FROM debian:latest
+
+# copy prototype to the container
 COPY minimal-prototype/ /root/minimal-prototype/
-#COPY eval/evaluate.py /root/minimal-prototype/evaluate.py
 COPY eval/evaluate.sh /root/minimal-prototype/evaluate.sh
-#COPY models/ /root/minimal-prototype/models/
 
-# copy data from original to the prototype
-RUN cp -r /root/MAB-malware/data /root/minimal-prototype/data
-RUN cp -r /root/MAB-malware/models /root/minimal-prototype/models
+# copy models to the container
+COPY models/ /root/minimal-prototype/models/
 
-# install bc for evaluation script
-RUN apt install bc -y
+# copy malware data to the container
+COPY data/ /root/minimal-prototype/data/
 
-# upgrade environment so gpu support is added
-RUN pip install --upgrade pip
-RUN pip install --upgrade torch torchvision torchaudio
+# set up requirements
+RUN apt update && apt upgrade -y && apt install -y python3 python3-pip bc vim git
+#RUN python3 -m pip install -r /root/minimal-prototype/requirements.txt
