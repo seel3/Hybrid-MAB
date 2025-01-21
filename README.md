@@ -15,6 +15,24 @@ This is due to the fact that the av mode requires timeconsuming I/O operations a
 To tackle this Problem the Hybrid Mode uses primarely the model to detect wether a sample is malicious or benign. Whenever the model can not determine if the sample is malware or not with a certanty above a fixed threshold, the av model is queried instead.
 
 
+## Quickstart
+Mount the av monitored share:
+``` bash
+mount -t cifs -o username=seel3,domain=dwinzer-av,uid=1000 //192.168.1.29/share/ /home/user/share/
+```
+
+Run the docker image:
+``` bash
+docker run -v /home/user/share:/root/Hybrid-MAB/data/share/av -ti --rm --runtime=nvidia --gpus all s33le/hybrid-mab bash 
+```
+
+Inside the docker image, run the attack:
+``` bash
+python run_attack.py
+```
+
+For more detailed Instructions refer to the Documentation
+
 
 
 

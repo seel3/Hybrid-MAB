@@ -15,3 +15,6 @@ RUN apt install bc -y
 # upgrade environment so gpu support is added
 RUN pip install --upgrade pip
 RUN pip install --upgrade torch torchvision torchaudio
+
+# set entrypoint to Hybrid-MAB
+RUN echo "cd /root/Hybrid-MAB" >> /root/.bashrc
