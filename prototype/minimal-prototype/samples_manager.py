@@ -126,7 +126,6 @@ class SamplesManager:
             count_pending = count_skip = 0
             
             # loop through all samples again to count statuses
-            # TODO: could this loop be integrated into the loop above? only does counting anyway 
             for sample in self.list_sample:
                 # if the status of the sample is pending, increase the count of pending/skipped samples
                 if sample.status == SAMPLE_STATUS_PENDING:
@@ -174,7 +173,6 @@ class SamplesManager:
 
         # loop through all failed samples
         for sample in list_fail:
-            # TODO: double checking if the sample has been modified is not necessary, as it has been checked when adding to the list. Delete?
             if len(sample.list_applied_arm) > 0:
                 # get the last applied arm/modification
                 last_arm = sample.list_applied_arm[-1]
