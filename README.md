@@ -55,6 +55,5 @@ For more detailed Instructions refer to the Documentation
         * Maybe scan time is too low/high?
 * AV querying could be done using AMSI instead of just dropping the files on disk. This could be achieved by a AGENT architecture where the rewriter can query amsi directly and get immediate feedback about a sample. 
 * Check if parameters can be optimized (max concurrent samples etc.) to optimize performance or evasion rate
-
 -->
 
