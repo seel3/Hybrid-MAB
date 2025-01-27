@@ -228,9 +228,9 @@ class Sample:
         """
         if self.seq_cur_x == -1:        # Quick minimzier
             if self.seq_cur_y == 0:
-                self.seq_cur_y = 1     # skip the first ''                         # TODO need test case
+                self.seq_cur_y = 1     # skip the first ''                         
             elif self.seq_cur_y == -1:  # special -1, try only the last original arm
-                self.current_applied_arm_subset = [self.list_applied_arm[-1]]       # TODO need test case
+                self.current_applied_arm_subset = [self.list_applied_arm[-1]]       
                 return
             # Quick Minimizer: try only the last arm first
             list_arm = [None for x in range(len(self.list_applied_arm))]
@@ -250,7 +250,7 @@ class Sample:
 
             # predict not need to apply OA1 if there are other actions
             minimal_action = list_mic_action[self.seq_cur_y]
-            if minimal_action == 'OA1' and len([arm for arm in list_arm if arm != None]) > 0:       # TODO need test case, bug
+            if minimal_action == 'OA1' and len([arm for arm in list_arm if arm != None]) > 0:       
                 #self.seq_cur_y += 1
                 self.inc_seq_cur_y()
                 if self.seq_cur_x > len(list_arm) - 1:
