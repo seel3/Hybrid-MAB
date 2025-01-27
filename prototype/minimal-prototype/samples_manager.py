@@ -235,7 +235,7 @@ class SamplesManager:
             if sample.scan_status in [SCAN_STATUS_DELETED, SCAN_STATUS_PASS]:
                 # if seq cur x is smaller than the ammount of modifications that have been applied to the sample
                 if sample.seq_cur_x < len(sample.list_applied_arm):
-                    # TODO: explain what this does exactly after commenting sample class
+                    # prepare the action subset
                     ret = sample.prepare_action_subset()
                     if ret == -1:
                         continue

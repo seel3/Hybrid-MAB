@@ -21,6 +21,12 @@ Mount the av monitored share:
 mount -t cifs -o username=seel3,domain=dwinzer-av,uid=1000 //192.168.1.29/share/ /home/user/share/
 ```
 
+Pull the docker image:
+```
+docker pull s33le/hybrid-mab
+```
+
+
 Run the docker image:
 ``` bash
 docker run -v /home/user/share:/root/Hybrid-MAB/data/share/av -ti --rm --runtime=nvidia --gpus all s33le/hybrid-mab bash 
@@ -32,15 +38,6 @@ python run_attack.py
 ```
 
 For more detailed Instructions refer to the Documentation
-
-
-
-
-## Meeting 09.01.2025
-* Defender höhere Priorität geben um Tompson Sampling zu fixen
-* AMSI agent implementieren.
-* Unterschiedliche evaluierungen heausfinden
-
 
 
 
@@ -56,5 +53,5 @@ For more detailed Instructions refer to the Documentation
     * This sometimes also applies to UCB. Here the reward propagation is just stuck in an endless loop.
     * Only ocurrs with AV scan
         * Maybe scan time is too low/high?
-* AV querying could be done using AMSI instead of just dropping the files on disk. This could be achieved by a client/server architecture where the rewriter can query amsi directly and get immediate feedback about a sample. 
+* AV querying could be done using AMSI instead of just dropping the files on disk. This could be achieved by a AGENT architecture where the rewriter can query amsi directly and get immediate feedback about a sample. 
 * Check if parameters can be optimized (max concurrent samples etc.) to optimize performance or evasion rate

@@ -3,12 +3,16 @@
 ## Proxmox
 Erstellen von 2 VMs:
 * av-server
-![alt text](images/image2.png)
-Windows Server needs TPM2 device and virtio drivers.
+
+  ![alt text](images/image2.png)
+
+  The Windows Server needs a TPM2 device and the virtio drivers mounted as a CD/DVD Drive.
 
 * ml-server
- ![alt text](images/image.png)
-The ml-server has the host gpu as a pci passthrough device configured. In order to avoid problems with cuda it also needs to have bios and not efi configured.
+
+  ![alt text](images/image.png)
+
+  The ml-server has the host gpu as a pci passthrough device configured. In order to avoid problems with cuda it also needs to have bios and not efi configured.
 
 ## av-server
 Create normal Windows VM.
