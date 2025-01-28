@@ -133,7 +133,7 @@ class SamplesManager:
                 elif sample.status == SAMPLE_STATUS_SKIP:
                     count_skip += 1
             logger_rew.info('(%d/%d): detect %d, fail %d' %(count_pending + count_skip, count_all, count_pending, count_skip))
-            # TODO: what is the purpose of this sleep? Can it bee removed orr will this lead to more computational load?
+            # TODO: what is the purpose of this sleep? Can it bee removed or will this lead to more computational load?
             time.sleep(2)
             # if all samples have been checked, break the loop
             if count_pending + count_skip == len(self.list_sample):

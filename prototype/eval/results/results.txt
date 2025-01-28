@@ -18,3 +18,7 @@ minimized-av:
 
 
 hybrid-mode: [55547/60000 (92.58%)] skip: 0 evasive: 128/1000 (12.80%) minimal: 128
+
+
+
+hybrid-mode (Thompson Sampling): [19897/60000 (33.16%)] skip: 0 evasive: 770/1000 (77.00%) minimal: 769

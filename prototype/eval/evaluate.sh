@@ -17,7 +17,7 @@ for ((i=1; i<=runs; i++)); do
     start=$(date +%s)
 
     # Execute attack
-    /usr/bin/python3 /root/minimal-prototype/run_attack.py
+    /usr/bin/python3 /root/Hybrid-MAB/run_attack.py
 
     # Get stop time
     stop=$(date +%s)
