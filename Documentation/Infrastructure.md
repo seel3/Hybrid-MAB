@@ -1,7 +1,7 @@
 # Setup der Infrastruktur
 
 ## Proxmox
-Erstellen von 2 VMs:
+Create 2 VMs:
 * av-server
 
   ![alt text](images/image2.png)
