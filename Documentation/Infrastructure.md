@@ -121,18 +121,18 @@ sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
 ```
 
 ### share
-Installieren der nötigen tools:
+Install required tools:
 ```bash
 sudo apt-get install cifs-utils
 ```
 
 
-Erstellen des share directories:
+Create the share directory:
 ```bash
 mkdir /home/user/share
 ```
 
-Mount des shares zur Kommunikation mit der av:
+Mount the share:
 ```bash
 sudo mount -t cifs -o username=user,domain=domain,uid=1000 //192.168.1.29/share/ /home/user/share/
 ```
