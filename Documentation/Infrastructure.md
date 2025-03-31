@@ -1,4 +1,4 @@
-# Setup der Infrastruktur
+# Setup of the Infrastructure
 
 ## Proxmox
 Create 2 VMs:
